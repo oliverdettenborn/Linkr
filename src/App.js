@@ -6,18 +6,21 @@ import {
 } from 'react-router-dom';
 import Login from './components/Login';
 import Timeline from './components/Timeline';
+import {UserProvider} from './context/UserContext';
 
 export default function App() {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route path='/' exact>
-          <Login />
+      <UserProvider>
+        <Switch>
+          <Route path='/' exact>
+            <Login />
+          </Route>
+          <Route path='/timeline' exact>
+            <Timeline />
         </Route>
-        <Route path='/timeline' exact>
-          <Timeline />
-        </Route>
-      </Switch>
+        </Switch>
+      </UserProvider>
     </BrowserRouter>
   );
 }
