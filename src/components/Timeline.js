@@ -5,6 +5,8 @@ import axios from 'axios';
 import Header from './Header';
 import Post from './Post';
 import UserContext from '../context/UserContext';
+import StylePages from './StylePages';
+import CreatePost from './CreatePost';
 
 export default function Timeline() {
     const { user } = useContext(UserContext);
@@ -20,18 +22,10 @@ export default function Timeline() {
     },[]);
 
     return (
-        <>
-            <Header />
-            <Container>
-                {/*CreatePost*/}
-                {posts.map( p => <Post post={p} key={p.id}/> )}
-            </Container>
-        </>
+        <StylePages title='timeline'>
+            <CreatePost />
+            {posts.map( p => <Post post={p} key={p.id}/> )}
+        </StylePages>  
     );
 }
 
-const Container = styled.div`
-    width: 610px;
-    height: 100vh;
-    margin: 95px 420px 0 auto;
-`;
