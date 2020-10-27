@@ -27,9 +27,4 @@ export default function Timeline() {
             {posts.map( p => <Post post={p} key={p.id}/> )}
         </StylePages>  
     );
-<<<<<<< HEAD
 }
-=======
-}
-
->>>>>>> b76f276393ac9a60245ee34d5cbd455d0a9ad35c
