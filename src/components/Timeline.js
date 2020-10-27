@@ -6,15 +6,9 @@ import CreatePost from './CreatePost';
 
 export default function Timeline() {
     return (
-        <StylePages>
+        <StylePages title='timeline'>
             <CreatePost />
             {/* adicionar aqui o componente com a timeline dos posts */}
         </StylePages>
     );
 }
-
-const Container = styled.div`
-    width: 610px;
-    height: 100vh;
-    margin: 95px 420px 0 auto;
-`;
