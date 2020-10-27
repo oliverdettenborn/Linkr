@@ -1,18 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Header from './Header';
+import StylePages from './StylePages';
 import CreatePost from './CreatePost';
 
 export default function Timeline() {
     return (
-        <>
-            <Header />
-            <Container>
-                <CreatePost />
-            </Container>
-            {/* hashtags */}
-        </>
+        <StylePages>
+            <CreatePost />
+            {/* adicionar aqui o componente com a timeline dos posts */}
+        </StylePages>
     );
 }
 
