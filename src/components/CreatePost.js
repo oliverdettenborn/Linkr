@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import UserContext from '../context/UserContext';
 
-export default function CreatePost() {
+export default function CreatePost(props) {
   const {user} = useContext(UserContext);
   const [publishing, setPublishing] = useState(false);
   const tokenUsuario = {"User-Token": user.token};
@@ -27,6 +27,7 @@ export default function CreatePost() {
         link.value = '';
         text.value = '';
         setPublishing(false);
+        props.addNewPost([response.data]);
       })
       .catch(err => {
         alert("Houve um erro ao publicar seu link");

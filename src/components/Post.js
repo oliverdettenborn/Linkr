@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 export default function Post(props) {
     const { post } = props;
-    console.log(post);
 
     const { username, avatar } = post.user;
     const { text, link, linkTitle, linkDescription, linkImage, id} = post;

@@ -13,6 +13,10 @@ export default function Timeline() {
     const [ posts, setPosts ] = useState([]);
     const [loading,setLoading] = useState(false);
 
+    function addNewPost(newPost){
+        setPosts([newPost,...posts]);
+    }
+
     useEffect(() => {
         const request = axios.get("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts?offset=0", {headers: {'user-token': token}});
 
@@ -28,7 +32,7 @@ export default function Timeline() {
 
     return (
         <StylePages title='timeline'>
-            <CreatePost />
+            <CreatePost addNewPost={addNewPost} />
 
             {loading 
                 ? <Message>Loading...</Message>
