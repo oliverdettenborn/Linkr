@@ -8,7 +8,7 @@ import UserContext from '../context/UserContext';
 export default function Header() {
     const { user } = useContext(UserContext);
     const [state, setstate] = useState(false);
-    const { avatar,id } = user.user;
+    const { avatar,id,username } = user.user;
     const history = useHistory();
 
     function handleLogout() {
@@ -33,8 +33,8 @@ export default function Header() {
             </HeaderStyled>
             
             <Nav state={state} >
-                <span onClick={() => history.push(`/my-posts/:${id}`)}>My posts</span> 
-                <span onClick={() => history.push(`/my-likes/:${id}`)}>My likes</span>
+                <span onClick={() => history.push(`/my-posts/${username}/${id}`)}>My posts</span> 
+                <span onClick={() => history.push(`/my-likes/${id}`)}>My likes</span>
                 <span onClick={handleLogout}>Logout</span>
             </Nav>
             
