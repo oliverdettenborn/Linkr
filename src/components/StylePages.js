@@ -25,7 +25,6 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-    width: 145px;
     height: 64px;
     font-family: Oswald;
     font-style: normal;
