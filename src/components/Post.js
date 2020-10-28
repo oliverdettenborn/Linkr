@@ -1,11 +1,13 @@
 import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import ReactHashtag from 'react-hashtag';
 
 export default function Post(props) {
     const { post } = props;
     const { username, avatar, id } = post.user;
     const { text, link, linkTitle, linkDescription, linkImage} = post;
+    const history = useHistory();
 
     function openLink(link) {
         window.open(`${link}`, 'window');
@@ -20,7 +22,11 @@ export default function Post(props) {
             </div>
             <ContainerInfos>
                 <h1>{username}</h1>
-                <p>{text}</p>
+                <p>
+                    <ReactHashtag onHashtagClick={hashtag => history.push(`/hashtag/${hashtag.substr(1)}`)}>
+                        {text}
+                    </ReactHashtag>
+                </p>
               
                 <LinkBox onClick={() => openLink(link)}>
                     <div>
@@ -79,7 +85,7 @@ const LinkBox = styled.div`
     background: #171717;
     border: 1px solid #4D4D4D;
     border-radius: 10px;
-    margin-top: 10px;
+    margin-top: 15px;
     display: flex;
     justify-content: space-between;
 

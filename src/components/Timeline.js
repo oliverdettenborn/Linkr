@@ -22,7 +22,9 @@ export default function Timeline() {
 
         request.then(reply => {
             setPosts(reply.data.posts);
-            setLoading(false);
+            setTimeout(() => {
+                setLoading(false);
+              }, 1000);
         });
 
         request.catch(err => {
@@ -36,7 +38,7 @@ export default function Timeline() {
 
             {loading 
                 ? <Load />
-                : posts.length == 0 
+                : posts.length === 0 
                     ? <Message>Nenhum post foi encontrado.</Message>
                     : posts.map( p => <Post post={p} key={p.id}/> )
             }
