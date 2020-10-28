@@ -1,6 +1,7 @@
 import React, {useState,useEffect,useContext} from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 import UserContext from '../context/UserContext';
 
@@ -10,21 +11,22 @@ export default function Trending() {
   const [trendings,setTrendings] = useState([]);
 
   useEffect(() => {
-      axios
-        .get("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/hashtags/trending",{headers: tokenUsuario})
-        .then(response =>
-          setTrendings(response.data.hashtags)
-        )
+    const request = axios.get("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/hashtags/trending",{headers: tokenUsuario})
+    request.then(response => {
+      setTrendings(response.data.hashtags)
+    })
   },[])
 
   return(
     <Container>
       <h1>trending</h1>
-      {trendings.map(hashtag => {
-        <Item key={hashtag.id}>
-          # {hashtag.name}
-        </Item>
-      })}
+      {trendings.map(hashtag => 
+        <Link to={`/hashtag/${hashtag.name}`}>
+          <Item key={hashtag.id}>
+            # {hashtag.name}
+          </Item>
+        </Link>
+      )}
     </Container>
   )
 };
@@ -33,7 +35,7 @@ const Container = styled.aside`
   width: 300px;
   height: 406px;
   position: fixed;
-  top: 105px;
+  top: 199px;
   right: 6%;
   background: #171717;
   border-radius: 16px;
@@ -60,5 +62,5 @@ const Item = styled.div`
   letter-spacing: 0.05em;
   color: #FFFFFF;
   padding: 0 20px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 `;

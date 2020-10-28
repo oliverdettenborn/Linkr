@@ -55,6 +55,7 @@ const HeaderStyled = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 2;
 
   h1 {
      font-family: 'Passion One', cursive;
@@ -74,8 +75,8 @@ const HeaderStyled = styled.header`
     }
 
     img {
-        width: 40px;
-        height: auto;
+        width: 45px;
+        height: 45px;
         border-radius: 50%;
         margin: 10px;
     }
@@ -88,10 +89,11 @@ const Nav = styled.nav`
     border-bottom-left-radius: 10px;
     padding: 15px;
     position: fixed;
-    top: 75px;
-    right: ${(props) => props.state ? '0px' : '-200px'};
+    top: ${(props) => props.state ? '60px' : '-200px'};
+    right: 0px;
     text-align: center;
     transition: all 200ms linear;
+    z-index: 1;
 
     span {
         display: block;

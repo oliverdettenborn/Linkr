@@ -14,7 +14,7 @@ export default function Timeline() {
     const [loading,setLoading] = useState(false);
 
     useEffect(() => {
-        const request = axios.get("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts?offset=0&limit=2", {headers: {'user-token': token}});
+        const request = axios.get("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts?offset=0", {headers: {'user-token': token}});
 
         request.then(reply => {
             setPosts(reply.data.posts);
@@ -41,6 +41,8 @@ export default function Timeline() {
 }
 
 const Message = styled.div`
-    color: red;
+    color: #FFF;
+    font-size: 30px;
+    margin: 20px;
 `;
 
