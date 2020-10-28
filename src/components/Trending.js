@@ -32,7 +32,7 @@ export default function Trending() {
 };
 
 const Container = styled.aside`
-  width: 300px;
+  width: 20%;
   height: 406px;
   position: fixed;
   top: 199px;

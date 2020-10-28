@@ -11,7 +11,6 @@ export default function UserTimeline() {
   const {user} = useContext(UserContext);
   const tokenUsuario = {"User-Token": user.token};
   const location = useLocation();
-  console.log(location);
   let {id,userName} = useParams();
   if(location.pathname === '/my-posts'){
     id = user.user.id;
