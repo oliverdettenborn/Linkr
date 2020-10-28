@@ -15,19 +15,15 @@ export default function CreatePost(props) {
 
     const {link,text} = event.target.elements
     
-    let dataPost = null;
-
-    (text === "")
-      ? dataPost = {"link": link.value, "text": text.value}
-      : dataPost = {"link": link.value}
+    const dataPost = {"link": link.value, "text": text.value};
 
     axios
       .post("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts",dataPost,{headers: tokenUsuario})
       .then(response => {
+        props.addNewPost(response.data.post);
+        setPublishing(false);
         link.value = '';
         text.value = '';
-        setPublishing(false);
-        props.addNewPost([response.data]);
       })
       .catch(err => {
         alert("Houve um erro ao publicar seu link");

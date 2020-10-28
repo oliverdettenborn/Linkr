@@ -18,7 +18,7 @@ export default function Timeline() {
     }
 
     useEffect(() => {
-        const request = axios.get("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts?offset=0", {headers: {'user-token': token}});
+        const request = axios.get("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts?offset=0&limit=10", {headers: {'user-token': token}});
 
         request.then(reply => {
             setPosts(reply.data.posts);
