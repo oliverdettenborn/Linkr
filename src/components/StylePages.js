@@ -20,7 +20,7 @@ export default function StylePages(props) {
 const Container = styled.div`
     width: 610px;
     height: 100vh;
-    margin: 105px 420px 0 auto;
+    margin: 105px auto 0 auto;
 `;
 
 const Title = styled.h1`

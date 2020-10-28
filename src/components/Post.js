@@ -78,6 +78,7 @@ const LinkBox = styled.div`
             font-size: 16px;
             line-height: 19px;
             color: #CECECE;
+            word-break: break-all;
         }
 
         p {
@@ -85,6 +86,7 @@ const LinkBox = styled.div`
             line-height: 13px;
             color: #9B9595;
             margin: 10px auto;
+            word-break: break-all;
         }
 
         span {
@@ -98,6 +100,8 @@ const LinkBox = styled.div`
     img {
         width: 150px;
         height: auto;
-        object-fit: contain;
+        object-fit: fill;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
     }
 `;
