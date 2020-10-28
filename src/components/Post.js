@@ -1,21 +1,28 @@
 import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export default function Post(props) {
     const { post } = props;
+    const { username, avatar, id } = post.user;
+    const { text, link, linkTitle, linkDescription, linkImage} = post;
 
-    const { username, avatar } = post.user;
-    const { text, link, linkTitle, linkDescription, linkImage, id} = post;
+    function openLink(link) {
+        window.open(`${link}`, 'window');
+    }
 
     return (
         <Container>
             <div>
-                <img src={avatar} />
+                <Link to={`/user/${username}/${id}`}>
+                    <img src={avatar} />
+                </Link>
             </div>
             <ContainerInfos>
                 <h1>{username}</h1>
                 <p>{text}</p>
-                <LinkBox>
+              
+                <LinkBox onClick={() => openLink(link)}>
                     <div>
                         <h1>{linkTitle}</h1>
                         <p>{linkDescription}</p>
@@ -28,6 +35,8 @@ export default function Post(props) {
     );
 }
 
+//
+
 const Container = styled.div`
     background: #171717;
     width: 615px;
@@ -39,10 +48,12 @@ const Container = styled.div`
     padding: 20px;
 
     > div {
-
-        > img {
-            width: 40px;
-            border-radius: 50%;
+        a {
+            > img {
+                width: 40px;
+                height: auto;
+                border-radius: 50%;
+            }
         }
     }
 `;
@@ -77,6 +88,7 @@ const LinkBox = styled.div`
             font-size: 16px;
             line-height: 19px;
             color: #CECECE;
+            overflow-wrap: break-word;
             word-break: break-all;
         }
 
@@ -85,6 +97,7 @@ const LinkBox = styled.div`
             line-height: 13px;
             color: #9B9595;
             margin: 10px auto;
+            overflow-wrap: break-word;
             word-break: break-all;
         }
 
@@ -93,6 +106,8 @@ const LinkBox = styled.div`
             line-height: 13px;
             color: #CECECE;
             padding-bottom: 10px;
+            overflow-wrap: break-word;
+            word-break: break-all;
         }
     }
     

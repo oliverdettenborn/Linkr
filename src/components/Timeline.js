@@ -35,7 +35,7 @@ export default function Timeline() {
             <CreatePost addNewPost={addNewPost} />
 
             {loading 
-                ? <Message>Loading...</Message>
+                ? <Load />
                 : posts.length == 0 
                     ? <Message>Nenhum post foi encontrado.</Message>
                     : posts.map( p => <Post post={p} key={p.id}/> )
@@ -48,5 +48,14 @@ const Message = styled.div`
     color: #FFF;
     font-size: 30px;
     margin: 20px;
+`;
+
+const Load = styled.div`
+  background-image: url('/loadBig.gif');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 615px;
+  height: 300px;
 `;
 
