@@ -51,6 +51,10 @@ const Container = styled.aside`
     border-bottom: 1px solid #484848;
     margin-bottom: 10px;
   }
+
+  @media (max-width: 700px){
+    display: none;
+  }
 `;
 
 const Item = styled.div`

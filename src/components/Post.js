@@ -47,6 +47,10 @@ const Container = styled.div`
     color: #fff;
     padding: 20px;
 
+    @media (max-width: 700px){
+        border-radius: 0;
+    }
+
     > div {
         a {
             > img {

@@ -9,23 +9,22 @@ export default function Login() {
 
 
   return (
-    <>
-      <Container>
+    <Container>
+      <ContainerLogo>
           <h1>linkr</h1>
-          <h3>save, share and discover<br /> the best links on the web </h3>
-      </Container>
+          <h3>save, share and discover the best links on the web </h3>
+      </ContainerLogo>
       <FormLogin 
           register={register} 
           setRegister={setRegister}
       />
-    </>
+    </Container>
   );
 };
 
-const Container = styled.aside`
-  background: #151515;
-  width: 100vw;
+const ContainerLogo = styled.div`
   height: 100vh;
+  width: 50%;
   padding-left: 7%;
   color: #fff;
   font-weight: 700;
@@ -33,7 +32,6 @@ const Container = styled.aside`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin-right: 33%;
   h1{
     font-family: 'Passion One', cursive;
     font-size: 106px;
@@ -43,6 +41,38 @@ const Container = styled.aside`
     font-family: 'Oswald', sans-serif;
     font-size: 43px;
     line-height: 64px;
+  }
+
+  @media (max-width: 700px){
+    height: 280px;
+    width: 100%;
+    align-items: center;
+    padding: 10px 50px;
+    background: #151515;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    h1{
+      font-size: 76px;
+      line-height: 84px;
+    }
+    h3{
+      font-size: 23px;
+      line-height: 34px;
+      text-align: center;
+    }
+  }
+`;
+
+const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
+  background: #151515;
+  width: 100vw;
+  height: 100vh;
+
+  @media (max-width: 700px){
+    flex-direction: column;
+    background: #333333;
   }
 `;
 

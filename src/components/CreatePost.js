@@ -72,6 +72,10 @@ const Container = styled.div`
   padding: 20px;
   display: flex;
 
+  @media (max-width: 700px){
+    border-radius: 0;
+  }
+
   img{
     width: 50px;
     height: 50px;
