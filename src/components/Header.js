@@ -1,21 +1,28 @@
 import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
-import {useHistory} from 'react-router-dom';
+import {useHistory,Link} from 'react-router-dom';
 
 import UserContext from '../context/UserContext';
 
 export default function Header() {
     const { user } = useContext(UserContext);
     const [state, setstate] = useState(false);
-    const { avatar } = user.user;
+    const { avatar,id } = user.user;
     const history = useHistory();
+
+    function handleLogout() {
+        localStorage.removeItem('@linkr: JWT_TOKEN');
+        history.push('/');
+    }
 
     //ALTERAR ROTAS NOS SPAN'S
     return (
         <>
             <HeaderStyled>
-                <h1>linkr</h1>
+                <h1>
+                    <Link to='/timeline'>linkr</Link>
+                </h1>
                 <div onClick={() => setstate(!state)}>
                     {state 
                         ? <FiChevronUp />
@@ -26,9 +33,9 @@ export default function Header() {
             </HeaderStyled>
             
             <Nav state={state} >
-                <span onClick={() => history.push('/')}>My posts</span> 
-                <span onClick={() => history.push('/')}>My likes</span>
-                <span onClick={() => history.push('/')}>Logout</span>
+                <span onClick={() => history.push(`/my-posts/:${id}`)}>My posts</span> 
+                <span onClick={() => history.push(`/my-likes/:${id}`)}>My likes</span>
+                <span onClick={handleLogout}>Logout</span>
             </Nav>
             
         </>

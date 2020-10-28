@@ -7,7 +7,7 @@ const UserContext = createContext();
 export default UserContext;
 
 export function UserProvider(props){
-  const [user,setUser] = useState(null);
+  const [user,setUser] = useState(JSON.parse(localStorage.getItem('@linkr: JWT_TOKEN')));
   const [sendRequest,setSendRequest] = useState(false);
   const history = useHistory();
 
@@ -23,6 +23,7 @@ export function UserProvider(props){
       .post("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/sign_in",dataLogin)
       .then(response => {
         setUser(response.data);
+        localStorage.setItem('@linkr: JWT_TOKEN',JSON.stringify(response.data));
         history.push('/timeline');
         setSendRequest(false);
       })
