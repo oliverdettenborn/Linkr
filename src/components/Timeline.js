@@ -1,8 +1,6 @@
 import React, { useEffect, useContext, useState } from 'react';
-import styled from 'styled-components';
 import axios from 'axios';
 
-import Header from './Header';
 import Post from './Post';
 import UserContext from '../context/UserContext';
 import StylePages from './StylePages';
@@ -14,7 +12,7 @@ export default function Timeline() {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        const request = axios.get("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts?offset=0&limit=2", {headers: {'user-token': token}});
+        const request = axios.get("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts?offset=0", {headers: {'user-token': token}});
 
         request.then(reply => {
             setPosts(reply.data.posts);

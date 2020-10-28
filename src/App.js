@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import Login from './components/Login';
 import Timeline from './components/Timeline';
+import Hashtag from './components/Hashtag';
 import {UserProvider} from './context/UserContext';
 
 export default function App() {
@@ -16,9 +17,12 @@ export default function App() {
           <Route path='/' exact>
             <Login />
           </Route>
-          <Route path='/timeline' exact>
+          <Route path='/timeline'>
             <Timeline />
-        </Route>
+          </Route>
+          <Route path='/hashtag/:hashtag'>
+            <Hashtag />
+          </Route>
         </Switch>
       </UserProvider>
     </BrowserRouter>
