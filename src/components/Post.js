@@ -60,6 +60,7 @@ const Container = styled.div`
 
 const ContainerInfos = styled.div`
     padding-left: 15px;
+    width: 100%;
 
     > h1 {
         font-size: 19px;
@@ -80,6 +81,7 @@ const LinkBox = styled.div`
     border-radius: 10px;
     margin-top: 10px;
     display: flex;
+    justify-content: space-between;
 
     div {
         padding: 18px;

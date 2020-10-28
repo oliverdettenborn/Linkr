@@ -18,7 +18,7 @@ export default function StylePages(props) {
 }
 
 const Container = styled.div`
-    width: 45%;
+    width: 40%;
     height: 100vh;
     margin: 105px 30% 0 auto;
 `;
