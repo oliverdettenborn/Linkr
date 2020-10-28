@@ -1,6 +1,6 @@
 import React, { useState,useEffect,useContext } from 'react';
 import axios from 'axios';
-import {useParams} from 'react-router-dom';
+import {useParams,useLocation} from 'react-router-dom';
 import styled from 'styled-components';
 
 import StylePages from './StylePages';
@@ -10,7 +10,13 @@ import Post from './Post';
 export default function UserTimeline() {
   const {user} = useContext(UserContext);
   const tokenUsuario = {"User-Token": user.token};
-  const {id,userName} = useParams();
+  const location = useLocation();
+  let {id,userName} = useParams();
+  if(location.pathname === '/my-posts'){
+    id = user.user.id;
+    userName = user.user.username;
+  }
+
   const [posts,setPosts] = useState([]);
   const [loading,setLoading] = useState(true);
   
@@ -30,7 +36,7 @@ export default function UserTimeline() {
   },[id])
   
   return (
-      <StylePages title={`# ${userName}`}>
+      <StylePages title={(location.pathname === "/my-posts") ? 'my posts' : `${userName}'s post`}>
         {
           loading
             ? <Load />

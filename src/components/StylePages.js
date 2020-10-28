@@ -18,10 +18,9 @@ export default function StylePages(props) {
 }
 
 const Container = styled.div`
-    width: 610px;
+    width: 45%;
     height: 100vh;
-    margin: 105px 420px 0 auto;
-    /* margin direita 420 px para não ficar por baixo do trendings */
+    margin: 105px 30% 0 auto;
 `;
 
 const Title = styled.h1`

@@ -15,19 +15,15 @@ export default function CreatePost(props) {
 
     const {link,text} = event.target.elements
     
-    let dataPost = null;
-
-    (text === "")
-      ? dataPost = {"link": link.value, "text": text.value}
-      : dataPost = {"link": link.value}
+    const dataPost = {"link": link.value, "text": text.value};
 
     axios
       .post("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts",dataPost,{headers: tokenUsuario})
       .then(response => {
+        props.addNewPost(response.data.post);
+        setPublishing(false);
         link.value = '';
         text.value = '';
-        setPublishing(false);
-        props.addNewPost([response.data]);
       })
       .catch(err => {
         alert("Houve um erro ao publicar seu link");
@@ -68,7 +64,7 @@ export default function CreatePost(props) {
 };
 
 const Container = styled.div`
-  width: 615px;
+  width: 100%;
   height: 200px;
   background: #FFFFFF;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -79,7 +75,7 @@ const Container = styled.div`
   img{
     width: 50px;
     height: 50px;
-    border-radius: 50%50%;
+    border-radius: 50%;
   }
   form{
     margin-left: 20px;
@@ -88,6 +84,7 @@ const Container = styled.div`
     font-family: 'Lato', sans-serif;
     font-style: normal;
     font-weight: 300;
+    flex-grow: 1;
 
     label{
       font-size: 20px;
@@ -96,7 +93,7 @@ const Container = styled.div`
       margin-bottom: 10px;
     }
     input,textarea{
-      width: 503px;
+      width: 100%;
       height: 30px;
       background: #EFEFEF;
       border-radius: 5px;

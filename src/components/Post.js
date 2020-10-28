@@ -39,7 +39,7 @@ export default function Post(props) {
 
 const Container = styled.div`
     background: #171717;
-    width: 615px;
+    width: 100%;
     margin: 30px auto;
     border-radius: 16px;
     font-family: 'Lato', sans-serif;
@@ -50,8 +50,8 @@ const Container = styled.div`
     > div {
         a {
             > img {
-                width: 40px;
-                height: auto;
+                width: 50px;
+                height: 50px;
                 border-radius: 50%;
             }
         }
