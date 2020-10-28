@@ -33,7 +33,7 @@ export default function Header() {
             </HeaderStyled>
             
             <Nav state={state} >
-                <span onClick={() => history.push(`/my-posts/${username}/${id}`)}>My posts</span> 
+                <span onClick={() => history.push(`/my-posts`)}>My posts</span> 
                 <span onClick={() => history.push(`/my-likes/${id}`)}>My likes</span>
                 <span onClick={handleLogout}>Logout</span>
             </Nav>

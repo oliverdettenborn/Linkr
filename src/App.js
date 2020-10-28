@@ -18,7 +18,7 @@ export default function App() {
           <Route path='/timeline' exact component={Timeline} isPrivate />
           <Route path='/hashtag/:hashtag' exact component={Hashtag} isPrivate />
           <Route path='/user/:userName/:id' exact component={UserTimeline} isPrivate />
-          <Route path='/my-posts/:userName/:id' exact component={UserTimeline} isPrivate />
+          <Route path='/my-posts/' exact component={UserTimeline} isPrivate />
           <Route path='/my-likes/:id' exact component={LikesTimeline} isPrivate />
         </Switch>
       </UserProvider>
