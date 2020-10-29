@@ -41,8 +41,3 @@ export default function Hashtag() {
       </StylePages>  
   );
 }
-const Message = styled.div`
-  color: #FFF;
-  font-size: 30px;
-  margin: 20px;
-`;
