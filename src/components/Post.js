@@ -24,9 +24,9 @@ export default function Post(props) {
                 <h1>{username}</h1>
                 <p>
                     <ReactHashtag 
-                        onHashtagClick={hashtag => history.push(`/hashtag/${hashtag.substr(1)}`)}
+                        
                         renderHashtag={hashtag => (
-                            <Hashtag>{hashtag}</Hashtag>
+                            <Hashtag onClick={() => history.push(`/hashtag/${hashtag.substr(1)}`)}>{hashtag}</Hashtag>
                         )}   
                     >
                         {text}
@@ -45,8 +45,6 @@ export default function Post(props) {
         </Container>
     );
 }
-
-//
 
 const Container = styled.div`
     background: #171717;
@@ -80,6 +78,10 @@ const ContainerInfos = styled.div`
     > h1 {
         font-size: 19px;
         line-height: 23px;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     > p {
@@ -97,6 +99,10 @@ const LinkBox = styled.div`
     margin-top: 15px;
     display: flex;
     justify-content: space-between;
+
+    &:hover{
+        cursor: pointer;
+    }
 
     div {
         padding: 18px;
