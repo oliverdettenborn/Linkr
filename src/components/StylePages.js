@@ -18,9 +18,13 @@ export default function StylePages(props) {
 }
 
 const Container = styled.div`
-    width: 40%;
+    width: 60%;
     height: 100vh;
     margin: 105px 30% 0 auto;
+
+    @media (max-width: 700px){
+        width: 100%;
+    }
 `;
 
 const Title = styled.h1`

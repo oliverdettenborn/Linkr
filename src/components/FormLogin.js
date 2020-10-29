@@ -62,21 +62,24 @@ export default function FormLogin(props) {
 };
 
 const ContainerLogin = styled.form`
-  position: fixed;
-  top: 0;
-  right:0;
   background: #333333;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 33%;
+  width: 35%;
   height: 100vh;
   font-family: 'Oswald', sans-serif;
   font-weight: bold;
   font-size: 25px;
-  margin: 0 auto;
   text-align: center;
+
+  @media (max-width: 700px){
+    height: calc(100% - 280px);
+    width: 100%;
+    justify-content: flex-start;
+    padding-top: 50px;
+  }
 
   input {
       padding-left: 5px;
