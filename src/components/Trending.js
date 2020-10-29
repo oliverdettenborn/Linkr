@@ -1,13 +1,14 @@
 import React, {useState,useEffect,useContext} from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 
 import UserContext from '../context/UserContext';
 
 export default function Trending() {
   const {user} = useContext(UserContext);
   const [trendings,setTrendings] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     const request = axios.get("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/hashtags/trending",{headers: {"User-Token": user.token}})
@@ -16,9 +17,26 @@ export default function Trending() {
     })
   },[])
 
+  function openHashtagPage(event){
+    event.preventDefault();
+    let { hashtag } = event.target.elements;
+    hashtag = hashtag.value;
+
+    trendings.forEach(t => {
+      if(t.name === hashtag) {
+        history.push(`/hashtag/${hashtag}`);
+      }
+    });
+
+    event.target.reset();
+  }
+
   return(
     <Container>
       <h1>trending</h1>
+      <form onSubmit={openHashtagPage}>
+        <Search placeholder='#...' name='hashtag'></Search>
+      </form>
       {trendings.map(hashtag => 
         <Link to={`/hashtag/${hashtag.name}`}>
           <Item key={hashtag.id}>
@@ -67,3 +85,20 @@ const Item = styled.div`
   padding: 0 20px;
   margin-bottom: 10px;
 `;
+
+const Search = styled.input`
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 23px;
+  letter-spacing: 0.05em;
+  width: 40%;
+  color: black;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border-radius: 4px;
+  border: none; 
+`;
+
