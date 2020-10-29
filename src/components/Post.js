@@ -23,7 +23,12 @@ export default function Post(props) {
             <ContainerInfos>
                 <h1>{username}</h1>
                 <p>
-                    <ReactHashtag onHashtagClick={hashtag => history.push(`/hashtag/${hashtag.substr(1)}`)}>
+                    <ReactHashtag 
+                        onHashtagClick={hashtag => history.push(`/hashtag/${hashtag.substr(1)}`)}
+                        renderHashtag={hashtag => (
+                            <Hashtag>{hashtag}</Hashtag>
+                        )}   
+                    >
                         {text}
                     </ReactHashtag>
                 </p>
@@ -126,8 +131,13 @@ const LinkBox = styled.div`
     img {
         width: 150px;
         height: auto;
-        object-fit: fill;
+        object-fit: cover;
         border-bottom-right-radius: 10px;
         border-top-right-radius: 10px;
     }
+`;
+
+const Hashtag = styled.span`
+    font-weight: bold;
+    color: #fff;
 `;

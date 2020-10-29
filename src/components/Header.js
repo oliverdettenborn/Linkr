@@ -42,14 +42,6 @@ export default function Header() {
     );
 }
 
-/* data:
-    token: "611808aa-f785-48eb-b140-fe70f6e003d4"
-    user:
-        avatar: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD"
-        email: "thiribeiro142@gmail.com"
-        id: 59
-        username: "thiago"   */
-
 const HeaderStyled = styled.header`
   background: #151515;
   position: fixed;
