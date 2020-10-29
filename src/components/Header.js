@@ -34,7 +34,7 @@ export default function Header() {
             
             <Nav state={state} >
                 <span onClick={() => history.push(`/my-posts`)}>My posts</span> 
-                <span onClick={() => history.push(`/my-likes/${id}`)}>My likes</span>
+                <span onClick={() => history.push(`/my-likes/`)}>My likes</span>
                 <span onClick={handleLogout}>Logout</span>
             </Nav>
             

@@ -1,16 +1,38 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
 import { Link, useHistory } from 'react-router-dom';
 import ReactHashtag from 'react-hashtag';
+import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
+import axios from 'axios';
+
+import UserContext from '../context/UserContext';
 
 export default function Post(props) {
     const { post } = props;
     const { username, avatar, id } = post.user;
-    const { text, link, linkTitle, linkDescription, linkImage} = post;
+    const { text, link, linkTitle, linkDescription, linkImage, id: idPost } = post;
+    const [ like, setLike ] = useState(false);
+    const { user } = useContext(UserContext);
     const history = useHistory();
 
     function openLink(link) {
         window.open(`${link}`, 'window');
+    }
+
+    function likePost() {
+        const request = axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts/${idPost}/like`, post, {headers: {'user-token': user.token}});
+        request.then(reply => {
+            console.log(reply);
+        });
+        setLike(!like);
+    }
+
+    function dislikePost(post) {
+        const request = axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts/${idPost}/dislike`, post, {headers: {'user-token': user.token}});
+        request.then(reply => {
+            console.log(reply);
+        });
+        setLike(!like);
     }
 
     return (
@@ -19,6 +41,12 @@ export default function Post(props) {
                 <Link to={`/user/${username}/${id}`}>
                     <img src={avatar} alt={username} />
                 </Link>
+                <LikeStyled like={like}>
+                    {like 
+                        ? <IoMdHeart onClick={() => dislikePost()} />
+                        : <IoMdHeartEmpty onClick={() => likePost()} />
+                    }
+                </LikeStyled>
             </div>
             <ContainerInfos>
                 <h1>{username}</h1>
@@ -54,13 +82,14 @@ const Container = styled.div`
     font-family: 'Lato', sans-serif;
     display: flex;
     color: #fff;
-    padding: 20px;
+    padding: 15px;
 
     @media (max-width: 700px){
         border-radius: 0;
     }
 
-    > div {
+    > div:first-child {
+        text-align: center;
         a {
             > img {
                 width: 50px;
@@ -146,4 +175,12 @@ const LinkBox = styled.div`
 const Hashtag = styled.span`
     font-weight: bold;
     color: #fff;
+`;
+
+const LikeStyled = styled.div`
+    svg {
+        font-size: 25px;
+        margin-top: 10px;
+        color: ${props => props.like ? "red" : "#fff"};
+    }
 `;

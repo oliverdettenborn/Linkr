@@ -90,10 +90,11 @@ const Search = styled.input`
   font-family: 'Lato', sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 19px;
+  font-size: 18px;
   line-height: 23px;
   letter-spacing: 0.05em;
-  color: #171717;
+  width: 40%;
+  color: black;
   position: absolute;
   top: 20px;
   right: 20px;
