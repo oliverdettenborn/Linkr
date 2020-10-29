@@ -6,10 +6,10 @@ import styled from 'styled-components';
 import StylePages from './StylePages';
 import UserContext from '../context/UserContext';
 import Post from './Post';
+import Load from './Load';
 
 export default function UserTimeline() {
   const {user} = useContext(UserContext);
-  const tokenUsuario = {"User-Token": user.token};
   const location = useLocation();
   let {id,userName} = useParams();
   if(location.pathname === '/my-posts'){
@@ -23,7 +23,7 @@ export default function UserTimeline() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/users/${id}/posts?offset=0&limit=2`,{headers: tokenUsuario})
+      .get(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/users/${id}/posts?offset=0&limit=2`,{headers: {"User-Token": user.token}})
       .then(response => {
         setPosts(response.data.posts);
         setTimeout(() => {
@@ -51,12 +51,4 @@ const Message = styled.div`
   color: #FFF;
   font-size: 30px;
   margin: 20px;
-`;
-const Load = styled.div`
-  background-image: url('/loadBig.gif');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 615px;
-  height: 300px;
 `;

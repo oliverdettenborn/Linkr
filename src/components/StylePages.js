@@ -25,6 +25,9 @@ const Container = styled.div`
     @media (max-width: 700px){
         width: 100%;
     }
+    @media (min-width: 1500px){
+        width: 45%;
+    }
 `;
 
 const Title = styled.h1`

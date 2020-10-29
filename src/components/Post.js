@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Link, useHistory } from 'react-router-dom';
 import ReactHashtag from 'react-hashtag';
@@ -17,7 +17,7 @@ export default function Post(props) {
         <Container>
             <div>
                 <Link to={`/user/${username}/${id}`}>
-                    <img src={avatar} />
+                    <img src={avatar} alt={username} />
                 </Link>
             </div>
             <ContainerInfos>
@@ -39,7 +39,7 @@ export default function Post(props) {
                         <p>{linkDescription}</p>
                         <span>{link}</span>
                     </div>
-                    <img src={linkImage} />
+                    <img src={linkImage} alt={linkTitle} />
                 </LinkBox>
             </ContainerInfos>
         </Container>

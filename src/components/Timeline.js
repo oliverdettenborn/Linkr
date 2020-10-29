@@ -6,10 +6,10 @@ import Post from './Post';
 import UserContext from '../context/UserContext';
 import StylePages from './StylePages';
 import CreatePost from './CreatePost';
+import Load from './Load'
 
 export default function Timeline() {
     const { user } = useContext(UserContext);
-    const { token } = user;
     const [ posts, setPosts ] = useState([]);
     const [loading,setLoading] = useState(false);
 
@@ -19,7 +19,7 @@ export default function Timeline() {
 
     useEffect(() => {
         setLoading(true);
-        const request = axios.get("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts?offset=0&limit=10", {headers: {'user-token': token}});
+        const request = axios.get("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts?offset=0&limit=10", {headers: {'user-token': user.token}});
 
         request.then(reply => {
             setPosts(reply.data.posts);
@@ -51,14 +51,5 @@ const Message = styled.div`
     color: #FFF;
     font-size: 30px;
     margin: 20px;
-`;
-
-const Load = styled.div`
-  background-image: url('/loadBig.gif');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 615px;
-  height: 300px;
 `;
 

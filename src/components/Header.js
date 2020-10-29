@@ -28,7 +28,7 @@ export default function Header() {
                         ? <FiChevronUp />
                         : <FiChevronDown />
                     }
-                    <img src={avatar} />
+                    <img src={avatar} alt={username} />
                 </div>
             </HeaderStyled>
             

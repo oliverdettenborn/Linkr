@@ -5,7 +5,7 @@ import {Redirect,Route} from 'react-router-dom';
 function RouteWrapper({redirectTo,isPrivate,component: Component,...rest}){
   const authenticated = localStorage.getItem('@linkr: JWT_TOKEN');
 
-  if(!authenticated && isPrivate) return <Redirect to={redirectTo} />
+  if(!(authenticated) && isPrivate) return <Redirect to={redirectTo} />
 
   return (
     <Route {...rest} render={props => <Component {...props} />} />

@@ -33,7 +33,7 @@ export default function CreatePost(props) {
 
   return(
     <Container> 
-      <img src={user.user && user.user.avatar} />
+      <img src={user.user && user.user.avatar} alt={user.user.username} />
       <form onSubmit={submitPost}>
         <label>
           O que você tem pra favoritar hoje?
@@ -54,7 +54,7 @@ export default function CreatePost(props) {
         >
           {
             publishing
-              ? <img src='/load.gif' />
+              ? <img src='/load.gif' alt='Loading...' />
               : "Publicar"
           }
         </button>
