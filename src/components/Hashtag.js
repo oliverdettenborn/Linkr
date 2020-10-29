@@ -2,6 +2,7 @@ import React, { useState,useEffect,useContext } from 'react';
 import axios from 'axios';
 import {useParams} from 'react-router-dom';
 import styled from 'styled-components';
+import InfiniteScroll from 'react-infinite-scroller';
 
 import StylePages from './StylePages';
 import UserContext from '../context/UserContext';
@@ -13,31 +14,45 @@ export default function Hashtag() {
   const {hashtag} = useParams();
   const [posts,setPosts] = useState([]);
   const [loading,setLoading] = useState(true);
+  const [hasMore,setHasMore] = useState(true);
+  const [offset,setOffset] = useState(0);
+  const [hashtagAtual,setHashtagAtual] = useState(hashtag)
   
   useEffect(() => {
-    setLoading(true);
     axios
-      .get(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/hashtags/${hashtag}/posts?offset=0`,{headers: {"User-Token": user.token}})
+      .get(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/hashtags/${hashtag}/posts?offset=${offset}&limit=10`,{headers: {"User-Token": user.token}})
       .then(response => {
-        setPosts(response.data.posts);
-        setTimeout(() => {
-          setLoading(false);
-        }, 1000);
+        hashtag === hashtagAtual
+          ? setPosts([...posts,...response.data.posts])
+          : setPosts(response.data.posts)
+        setLoading(false);
       })
       .catch(err => {
         alert('Houve uma falha ao obter os posts, por favor atualize a página');
       })
-  },[hashtag])
+  },[hashtag,offset])
+
+  function handleLoader(){
+    setHasMore(false);
+    setOffset(offset+10);
+  }
   
   return (
       <StylePages title={`# ${hashtag}`}>
-        {
-          loading
-            ? <Load />
-            : posts.length === 0
-              ? <Message>Nenhum post foi encontrado.</Message>
-              : posts.map(p => <Post post={p} key={p.id} />)
-        }
+        <InfiniteScroll
+          pageStart={offset}
+          loadMore={handleLoader}
+          hasMore={hasMore}
+          loader={<Load />}
+        >
+          {
+            loading
+              ? <Load />
+              : posts.length === 0
+                ? <Message>Nenhum post foi encontrado.</Message>
+                : posts.map(p => <Post post={p} key={p.id} />)
+          }
+        </InfiniteScroll>
       </StylePages>  
   );
 }
