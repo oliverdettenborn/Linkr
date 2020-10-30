@@ -10,10 +10,15 @@ import UserContext from '../context/UserContext';
 export default function Post(props) {
     const { post } = props;
     const { username, avatar, id } = post.user;
-    const { text, link, linkTitle, linkDescription, linkImage, id: idPost } = post;
+    const { text, link, linkTitle, linkDescription, linkImage, id: idPost, likes } = post;
     const [ like, setLike ] = useState(false);
     const { user } = useContext(UserContext);
     const history = useHistory();
+    console.log(user);
+
+    likes.forEach(l => {
+        l.userId === user.user.id && setLike(true);
+    });
 
     function openLink(link) {
         window.open(`${link}`, 'window');
