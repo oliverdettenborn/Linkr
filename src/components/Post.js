@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import { Link, useHistory } from 'react-router-dom';
 import ReactHashtag from 'react-hashtag';
@@ -13,12 +13,17 @@ export default function Post(props) {
     const { text, link, linkTitle, linkDescription, linkImage, id: idPost, likes } = post;
     const [ like, setLike ] = useState(false);
     const { user } = useContext(UserContext);
+    const [ likesPost, setLikesPost ] = useState(0);
     const history = useHistory();
-    console.log(user);
+    console.log(likes);
+    
+    useEffect(() => {
+        likes.forEach((l, index) => {
+            l.userId === user.user.id && setLike(true);
+            setLikesPost((index + 1));
+        });
 
-    likes.forEach(l => {
-        l.userId === user.user.id && setLike(true);
-    });
+    },[]);
 
     function openLink(link) {
         window.open(`${link}`, 'window');
@@ -26,18 +31,14 @@ export default function Post(props) {
 
     function likePost() {
         const request = axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts/${idPost}/like`, post, {headers: {'user-token': user.token}});
-        request.then(reply => {
-            console.log(reply);
-        });
         setLike(!like);
+        setLikesPost((likesPost + 1));
     }
 
-    function dislikePost(post) {
+    function dislikePost() {
         const request = axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts/${idPost}/dislike`, post, {headers: {'user-token': user.token}});
-        request.then(reply => {
-            console.log(reply);
-        });
         setLike(!like);
+        setLikesPost((likesPost - 1));
     }
 
     return (
@@ -52,6 +53,13 @@ export default function Post(props) {
                         : <IoMdHeartEmpty onClick={() => likePost()} />
                     }
                 </LikeStyled>
+                
+                {like 
+                        ? <span>{likesPost} likes</span>
+                        : <span>{likesPost} likes</span>
+                    }
+                    
+                
             </div>
             <ContainerInfos>
                 <h1>{username}</h1>
@@ -102,6 +110,8 @@ const Container = styled.div`
                 border-radius: 50%;
             }
         }
+
+        
     }
 `;
 
