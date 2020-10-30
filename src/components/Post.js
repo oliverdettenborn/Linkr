@@ -15,7 +15,6 @@ export default function Post(props) {
     const { user } = useContext(UserContext);
     const [ likesPost, setLikesPost ] = useState(0);
     const history = useHistory();
-    console.log(likes);
     
     useEffect(() => {
         likes.forEach((l, index) => {
@@ -57,7 +56,7 @@ export default function Post(props) {
                 {like 
                         ? <span>{likesPost} likes</span>
                         : <span>{likesPost} likes</span>
-                    }
+                }
                     
                 
             </div>
@@ -111,6 +110,10 @@ const Container = styled.div`
             }
         }
 
+        span {
+            font-size: 11px;
+            color: #fff;
+        }
         
     }
 `;
