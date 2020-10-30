@@ -19,6 +19,7 @@
     "react-tooltip": "^4.2.10",
     "react-transition-group": "^4.4.1",
     "styled-components": "^5.2.0",
+    "tooltip": "^1.6.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
