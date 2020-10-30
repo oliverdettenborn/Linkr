@@ -2,28 +2,25 @@ body{
   background: #333333;
 }
 .fade-enter {
-  opacity: 0.01;
+  left: -100vw;
   z-index: 1;
 }
 
 .fade-enter.fade-enter-active {
-  opacity: 1;
-  transition: opacity 300ms ease-in-out 150ms;
+  left: 0vw;
+  transition: left 500ms ease-in-out 300ms;
 }
 
 .fade-exit {
-  opacity: 1;
+  left: 0vw;
 }
 
 .fade-exit.fade-exit-active {
-  opacity: 0.01;
-  transition: opacity 150ms ease-in-out;
+  left: -100vw;
+  transition: left 300ms ease-in-out;
 }
 
 .page {
   position: absolute;
   width: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
 }

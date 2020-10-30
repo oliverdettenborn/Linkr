@@ -12,7 +12,7 @@ export default function Transitions(props) {
           <TransitionGroup>
             <CSSTransition
               key={location.key}
-              timeout={450}
+              timeout={800}
               classNames="fade"
             >
               {props.children}
