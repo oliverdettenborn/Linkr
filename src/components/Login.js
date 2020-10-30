@@ -9,7 +9,7 @@ export default function Login() {
 
 
   return (
-    <Container>
+    <Container className='page'>
       <ContainerLogo>
           <h1>linkr</h1>
           <h3>save, share and discover the best links on the web </h3>

@@ -1,8 +1,29 @@
 body{
   background: #333333;
-<<<<<<< HEAD
-=======
-  width: 100vw;
-  height: 100vh;
->>>>>>> 0657484450c39a5a7f3ec0270c47100750c3b6a1
+}
+.fade-enter {
+  opacity: 0.01;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in-out 150ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 150ms ease-in-out;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
 }

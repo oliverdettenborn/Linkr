@@ -33,10 +33,11 @@ export default function Trending() {
 
   return(
     <Container>
-      <h1>trending</h1>
-      <form onSubmit={openHashtagPage}>
-        <Search placeholder='#...' name='hashtag'></Search>
-      </form>
+      <h1>trending
+        <form onSubmit={openHashtagPage}>
+          <Search placeholder='#...' name='hashtag'></Search>
+        </form>
+      </h1>
       {trendings.map(hashtag => 
         <Link to={`/hashtag/${hashtag.name}`}>
           <Item key={hashtag.id}>
@@ -69,6 +70,11 @@ const Container = styled.aside`
     margin-bottom: 10px;
   }
 
+  @media (max-width: 1100px){
+    border-bottom: none;
+    margin-bottom:none;
+  }
+
   @media (max-width: 700px){
     display: none;
   }
@@ -83,7 +89,7 @@ const Item = styled.div`
   letter-spacing: 0.05em;
   color: #FFFFFF;
   padding: 0 20px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 `;
 
 const Search = styled.input`
@@ -99,6 +105,12 @@ const Search = styled.input`
   top: 20px;
   right: 20px;
   border-radius: 4px;
-  border: none; 
+  border: none;
+
+  @media (max-width: 1100px){
+    position: initial;
+    width: 100%;
+    margin-top: 5px;
+  }
 `;
 

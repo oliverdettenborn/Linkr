@@ -6,14 +6,14 @@ import Trending from './Trending';
 
 export default function StylePages(props) {
     return (
-        <>
+        <div className='page'>
             <Header />
             <Container>
                 <Title>{props.title}</Title>
                 {props.children}
             </Container>
             <Trending />
-        </>
+        </div>
     );
 }
 
