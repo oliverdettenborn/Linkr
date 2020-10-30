@@ -33,17 +33,13 @@
 
 ### Tech Stack
 Languages:<br>
-<img src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/>
-<img src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/>
-<img src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/>
-<img scr='https://img.shields.io/badge/jsx%20-%2320232a.svg?&style=for-the-badge&logo=jsx&logoColor=%2361DAFB'>
-<img src="https://img.shields.io/badge/markdown-%23000000.svg?&style=for-the-badge&logo=markdown&logoColor=white"/>
-<img src='https://img.shields.io/badge/react_infinite_scroller%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB'/>
-<img src='https://img.shields.io/badge/react_hashtag%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB'/>
-<img src='https://img.shields.io/badge/react_tooltip%20-%2320232a.svg?&style=for-the-badge&logo=react_tooltip&logoColor=%2361DAFB'/>
-<img src='https://img.shields.io/badge/react_transition_group%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB'/>
-<img src='https://img.shields.io/badge/prop_types%20-%2320232a.svg?&style=for-the-badge&logo=prop_types&logoColor=%2361DAFB'/>
-
+<p align="center">
+    <img src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/>
+    <img src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/>
+    <img src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/>
+    <img scr='https://img.shields.io/badge/jsx%20-%2320232a.svg?&style=for-the-badge&logo=jsx&logoColor=%2361DAFB'>
+    <img src="https://img.shields.io/badge/markdown-%23000000.svg?&style=for-the-badge&logo=markdown&logoColor=white"/>
+</p>
 
 The following tools and frameworks were used in the construction of the project:<br>
 <p align="center">
@@ -56,6 +52,11 @@ The following tools and frameworks were used in the construction of the project:
     <img src='https://img.shields.io/badge/yarn%20-%2320232a.svg?&style=for-the-badge&logo=yarn&logoColor=%2361DAFB'>
     <img src='https://img.shields.io/badge/react-icon%20-%2320232a.svg?&style=for-the-badge&logo=react-icon&logoColor=%2361DAFB'>
     <img src='https://img.shields.io/badge/styled-components%20-%2320232a.svg?&style=for-the-badge&logo=styled-components&logoColor=%2361DAFB'>
+    <img src='https://img.shields.io/badge/react_infinite_scroller%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB'/>
+    <img src='https://img.shields.io/badge/react_hashtag%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB'/>
+    <img src='https://img.shields.io/badge/react_tooltip%20-%2320232a.svg?&style=for-the-badge&logo=react_tooltip&logoColor=%2361DAFB'/>
+    <img src='https://img.shields.io/badge/react_transition_group%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB'/>
+    <img src='https://img.shields.io/badge/prop_types%20-%2320232a.svg?&style=for-the-badge&logo=prop_types&logoColor=%2361DAFB'/>
 </p>
 
 Version Control:<br>
