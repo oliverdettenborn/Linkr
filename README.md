@@ -42,7 +42,7 @@ Languages:<br>
 <img src='https://img.shields.io/badge/react_hashtag%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB'/>
 <img src='https://img.shields.io/badge/react_tooltip%20-%2320232a.svg?&style=for-the-badge&logo=react_tooltip&logoColor=%2361DAFB'/>
 <img src='https://img.shields.io/badge/react_transition_group%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB'/>
-<img src=''/>
+<img src='https://img.shields.io/badge/prop_types%20-%2320232a.svg?&style=for-the-badge&logo=prop_types&logoColor=%2361DAFB'/>
 
 
 The following tools and frameworks were used in the construction of the project:<br>
