@@ -6,8 +6,6 @@ import FormLogin from './FormLogin';
 export default function Login() {
   const [ register, setRegister ] = useState(false);
 
-
-
   return (
     <Container className='page'>
       <ContainerLogo>

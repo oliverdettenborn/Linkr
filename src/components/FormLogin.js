@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext,useState} from 'react';
 import styled from 'styled-components';
 
 import UserContext from '../context/UserContext';
@@ -45,7 +45,12 @@ export default function FormLogin(props) {
         type='submit' 
         disabled={sendRequest ? true : false}
       >
-        { register ? "Sing Up" : "Log in" }
+        {sendRequest
+          ? <img src='/load.gif' alt='Loading...' />
+          : register 
+            ? "Sing Up" 
+            : "Log in" 
+        }
       </button>
       <span onClick={() => {
         setRegister(!register)
@@ -97,6 +102,12 @@ const ContainerLogin = styled.form`
     button {
       background: #1877F2;
       color: #fff;
+
+      img{
+        height: 40px;
+        width: auto;
+        margin-top: -10px;
+      }
     }
 
     span {
