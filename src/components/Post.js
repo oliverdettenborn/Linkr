@@ -28,13 +28,13 @@ export default function Post({post}) {
 
     function likePost() {
         axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts/${idPost}/like`, post, {headers: {'user-token': user.token}});
-        setLike(!like);
+        setIsLiked(!isLiked);
         setLikesPost((likesPost + 1));
     }
 
     function dislikePost() {
         axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts/${idPost}/dislike`, post, {headers: {'user-token': user.token}});
-        setLike(!like);
+        setIsLiked(!isLiked);
         setLikesPost((likesPost - 1));
     }
 
