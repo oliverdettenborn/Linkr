@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {Redirect,Route} from 'react-router-dom';
 
 function RouteWrapper({redirectTo,isPrivate,component: Component,...rest}){
-  const authenticated = localStorage.getItem('@linkr: JWT_TOKEN');
+  const authenticated = JSON.parse(localStorage.getItem('@linkr: JWT_TOKEN'));
 
   if(!(authenticated) && isPrivate) return <Redirect to={redirectTo} />
 

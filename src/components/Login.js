@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import {useHistory} from 'react-router-dom';
 
 import FormLogin from './FormLogin';
 
 export default function Login() {
   const [ register, setRegister ] = useState(false);
+  const authenticated = JSON.parse(localStorage.getItem('@linkr: JWT_TOKEN'));
+  const history = useHistory();
+
+  if(authenticated){
+    history.push('/timeline');
+  }
 
   return (
     <Container className='page'>
