@@ -1,39 +1,40 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import styled from 'styled-components';
 import ReactHashtag from 'react-hashtag';
 import { useHistory } from 'react-router-dom';
 
-
+import UserContext from '../context/UserContext';
 import ButtonsPost from './ButtonsPost';
 
-export default function InfoPost({post,username}) {
-  const { text, link, linkTitle, linkDescription, linkImage} = post;
-  const history = useHistory();
+export default function InfoPost({post,username,id}) {
+    const { text, link, linkTitle, linkDescription, linkImage} = post;
+    const history = useHistory();
+    const { user } = useContext(UserContext);
 
-  return (
-    <ContainerInfos>
-        <ButtonsPost post={post} />
-        <h1>{username}</h1>
-        <p>
-            <ReactHashtag 
-                renderHashtag={hashtag => (
-                    <Hashtag onClick={() => history.push(`/hashtag/${hashtag.substr(1)}`)}>{hashtag}</Hashtag>
-                )}   
-            >
-                {text}
-            </ReactHashtag>
-        </p>
+    return (
+        <ContainerInfos>
+            {(id === user.user.id) && <ButtonsPost post={post} />}
+            <h1>{username}</h1>
+            <p>
+                <ReactHashtag 
+                    renderHashtag={hashtag => (
+                        <Hashtag onClick={() => history.push(`/hashtag/${hashtag.substr(1)}`)}>{hashtag}</Hashtag>
+                    )}   
+                >
+                    {text}
+                </ReactHashtag>
+            </p>
 
-        <LinkBox href={link} target='_blank'>
-            <div>
-                <h1>{linkTitle}</h1>
-                <p>{linkDescription}</p>
-                <span>{link}</span>
-            </div>
-            <img src={linkImage} alt={linkTitle} />
-        </LinkBox>
-    </ContainerInfos>
-  )
+            <LinkBox href={link} target='_blank'>
+                <div>
+                    <h1>{linkTitle}</h1>
+                    <p>{linkDescription}</p>
+                    <span>{link}</span>
+                </div>
+                <img src={linkImage} alt={linkTitle} />
+            </LinkBox>
+        </ContainerInfos>
+    )
 };
 
 const ContainerInfos = styled.div`

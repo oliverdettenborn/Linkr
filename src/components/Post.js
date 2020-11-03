@@ -16,7 +16,7 @@ export default function Post({post}) {
                 </Link>
                 <LikePost post={post}/>
             </div>
-            <InfoPost post={post} username={username} />
+            <InfoPost post={post} username={username} id={id} />
         </Container>
     );
 }
