@@ -28,7 +28,11 @@ const Container = styled.div`
             font-size: 11px;
             color: #fff;
         }
-        
+        .tooltip {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 6px;
+            color: #505050;
+        }
     }
 `;
 
