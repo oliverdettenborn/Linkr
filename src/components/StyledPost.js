@@ -35,6 +35,7 @@ const Container = styled.div`
 const ContainerInfos = styled.div`
     padding-left: 15px;
     width: 100%;
+    position: relative;
 
     > h1 {
         font-size: 19px;
@@ -53,7 +54,23 @@ const ContainerInfos = styled.div`
     }
 `;
 
-const LinkBox = styled.div`
+const ContainerButtons = styled.div`
+    width: 45px;
+    height: 20px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 18px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    svg{
+        cursor: pointer;
+    }
+`;
+
+const LinkBox = styled.a`
     background: #171717;
     border: 1px solid #4D4D4D;
     border-radius: 10px;
@@ -122,5 +139,6 @@ export {
   Hashtag,
   LinkBox,
   ContainerInfos,
-  Container
+  Container,
+  ContainerButtons
 }

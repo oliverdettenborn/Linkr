@@ -2,10 +2,12 @@ import React, { useState, useContext, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import ReactHashtag from 'react-hashtag';
 import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
+import {AiFillDelete} from 'react-icons/ai';
+import {HiPencil} from 'react-icons/hi';
 import axios from 'axios';
 
 import UserContext from '../context/UserContext';
-import { LikeStyled, Hashtag, LinkBox, ContainerInfos, Container } from './StyledPost';
+import { LikeStyled, Hashtag, LinkBox, ContainerInfos,ContainerButtons, Container } from './StyledPost';
 
 export default function Post({post}) {
     const { username, avatar, id } = post.user;
@@ -22,10 +24,6 @@ export default function Post({post}) {
         });
 
     },[]);
-
-    function openLink(link) {
-        window.open(`${link}`, 'window');
-    }
 
     function likePost() {
         axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts/${idPost}/like`, post, {headers: {'user-token': user.token}});
@@ -53,17 +51,18 @@ export default function Post({post}) {
                 </LikeStyled>
                 
                 {like 
-                        ? <span>{likesPost} likes</span>
-                        : <span>{likesPost} likes</span>
+                    ? <span>{likesPost} likes</span>
+                    : <span>{likesPost} likes</span>
                 }
-                    
-                
             </div>
             <ContainerInfos>
+                <ContainerButtons>
+                    <HiPencil />
+                    <AiFillDelete />
+                </ContainerButtons>
                 <h1>{username}</h1>
                 <p>
                     <ReactHashtag 
-                        
                         renderHashtag={hashtag => (
                             <Hashtag onClick={() => history.push(`/hashtag/${hashtag.substr(1)}`)}>{hashtag}</Hashtag>
                         )}   
@@ -72,7 +71,7 @@ export default function Post({post}) {
                     </ReactHashtag>
                 </p>
 
-                <LinkBox onClick={() => openLink(link)}>
+                <LinkBox href={link} target='_blank'>
                     <div>
                         <h1>{linkTitle}</h1>
                         <p>{linkDescription}</p>
