@@ -9,13 +9,16 @@ import ReactTooltip from 'react-tooltip';
 
 import UserContext from '../context/UserContext';
 import { LikeStyled, Hashtag, LinkBox, ContainerInfos,ContainerButtons, Container } from './StyledPost';
+import TextPostContext, { TextPostEditProvider } from '../context/TextPostEdit';
 
 export default function Post({post}) {
     const { username, avatar, id } = post.user;
     const { text, link, linkTitle, linkDescription, linkImage, id: idPost, likes } = post;
     const [ isLiked, setIsLiked ] = useState(false);
     const { user } = useContext(UserContext);
+    const { edit, textPostEdit } = useContext(TextPostContext);
     const [ likesPost, setLikesPost ] = useState(0);
+    
     const history = useHistory();
     
     useEffect(() => {
@@ -28,13 +31,13 @@ export default function Post({post}) {
 
     function likePost() {
         axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts/${idPost}/like`, post, {headers: {'user-token': user.token}});
-        setLike(!like);
+        setIsLiked(!isLiked);
         setLikesPost((likesPost + 1));
     }
 
     function dislikePost() {
         axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts/${idPost}/dislike`, post, {headers: {'user-token': user.token}});
-        setLike(!like);
+        setIsLiked(!isLiked);
         setLikesPost((likesPost - 1));
     }
 
@@ -84,19 +87,23 @@ export default function Post({post}) {
             </div>
             <ContainerInfos>
                 <ContainerButtons>
-                    <HiPencil />
+                    <HiPencil onClick={() => textPostEdit()}/>
                     <AiFillDelete />
                 </ContainerButtons>
                 <h1>{username}</h1>
-                <p>
-                    <ReactHashtag 
-                        renderHashtag={hashtag => (
-                            <Hashtag onClick={() => history.push(`/hashtag/${hashtag.substr(1)}`)}>{hashtag}</Hashtag>
-                        )}   
-                    >
-                        {text}
-                    </ReactHashtag>
-                </p>
+
+                {edit
+                    ?   <TextPostEditProvider>{text}</TextPostEditProvider>
+                    :   <p>
+                            <ReactHashtag 
+                                renderHashtag={hashtag => (
+                                    <Hashtag onClick={() => history.push(`/hashtag/${hashtag.substr(1)}`)}>{hashtag}</Hashtag>
+                                )}   
+                            >
+                                {text}
+                            </ReactHashtag>
+                        </p>
+                }      
 
                 <LinkBox href={link} target='_blank'>
                     <div>

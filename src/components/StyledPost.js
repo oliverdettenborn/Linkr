@@ -56,6 +56,11 @@ const ContainerInfos = styled.div`
         color: #B7B7B7;
         padding-top: 10px;
     }
+
+    input {
+        border-radius: 7px;
+        padding: 5px;
+    }
 `;
 
 const ContainerButtons = styled.div`
@@ -134,7 +139,7 @@ const LikeStyled = styled.div`
     svg {
         font-size: 25px;
         margin-top: 10px;
-        color: ${props => props.like ? "red" : "#fff"};
+        color: ${props => props.isLiked ? "red" : "#fff"};
     }
 `;
 
