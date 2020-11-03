@@ -4,6 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import ReactHashtag from 'react-hashtag';
 import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
 import axios from 'axios';
+import ReactTooltip from 'react-tooltip';
 
 import UserContext from '../context/UserContext';
 
@@ -11,14 +12,14 @@ export default function Post(props) {
     const { post } = props;
     const { username, avatar, id } = post.user;
     const { text, link, linkTitle, linkDescription, linkImage, id: idPost, likes } = post;
-    const [ like, setLike ] = useState(false);
+    const [ isLiked, setIsLiked ] = useState(false);
     const { user } = useContext(UserContext);
     const [ likesPost, setLikesPost ] = useState(0);
     const history = useHistory();
     
     useEffect(() => {
         likes.forEach((l, index) => {
-            l.userId === user.user.id && setLike(true);
+            l.userId === user.user.id && setIsLiked(true);
             setLikesPost((index + 1));
         });
 
@@ -30,14 +31,40 @@ export default function Post(props) {
 
     function likePost() {
         const request = axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts/${idPost}/like`, post, {headers: {'user-token': user.token}});
-        setLike(!like);
+        setIsLiked(!isLiked);
         setLikesPost((likesPost + 1));
     }
 
     function dislikePost() {
         const request = axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts/${idPost}/dislike`, post, {headers: {'user-token': user.token}});
-        setLike(!like);
+        setIsLiked(!isLiked);
         setLikesPost((likesPost - 1));
+    }
+
+    function tooltipText(likes, isLiked) {
+        let text = "";
+
+        if(likesPost === 0) return "Sem curtidas";
+
+        let likesUsers = likes.map(like => {
+            return like["user.username"];
+        });
+
+        if(isLiked) {
+            if(likesPost === 1) return "Você curtiu isso."
+
+            likesUsers = likesUsers.filter(u => u !== user.user.username);
+            if(likesPost === 2) return `Você e ${likesUsers[0]} curtiram isso`;
+
+            text = `Você e ${likesUsers[0]} e outra(s) ${likesUsers.length - 1} pessoa(s) curtiram isso`;
+        } else {
+            if(likesPost === 1) return `${likesUsers[0]} curtiu isso.`
+            if(likesPost === 2) return `${likesUsers[0]} e ${likesUsers[1]} curtiram isso.`
+
+            text = `${likesUsers[0]}, ${likesUsers[1]} e outra(s) ${likesUsers.length - 2} pessoa(s) curtiram isso`;
+        }
+
+        return text;
     }
 
     return (
@@ -46,19 +73,18 @@ export default function Post(props) {
                 <Link to={`/user/${username}/${id}`}>
                     <img src={avatar} alt={username} />
                 </Link>
-                <LikeStyled like={like}>
-                    {like 
+                <LikeStyled isLiked={isLiked}>
+                    {isLiked 
                         ? <IoMdHeart onClick={() => dislikePost()} />
                         : <IoMdHeartEmpty onClick={() => likePost()} />
                     }
                 </LikeStyled>
                 
-                {like 
-                        ? <span>{likesPost} likes</span>
-                        : <span>{likesPost} likes</span>
-                }
-                    
-                
+                {isLiked
+                    ? <span data-tip={tooltipText(likes, isLiked)} data-class={'tooltip'} data-place={'bottom'} data-arrow-color={'rgba(255, 255, 255, 0.9)'}>{likesPost} likes</span>
+                    : <span data-tip={tooltipText(likes, isLiked)} data-class={'tooltip'} data-place={'bottom'} data-arrow-color={'rgba(255, 255, 255, 0.9)'}>{likesPost} likes</span>
+                }   
+                <ReactTooltip />
             </div>
             <ContainerInfos>
                 <h1>{username}</h1>
@@ -109,12 +135,15 @@ const Container = styled.div`
                 border-radius: 50%;
             }
         }
-
         span {
             font-size: 11px;
             color: #fff;
         }
-        
+        .tooltip {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 6px;
+            color: #505050;
+        }
     }
 `;
 
@@ -199,6 +228,7 @@ const LikeStyled = styled.div`
     svg {
         font-size: 25px;
         margin-top: 10px;
-        color: ${props => props.like ? "red" : "#fff"};
+        color: ${props => props.isLiked ? "red" : "#fff"};
     }
 `;
+

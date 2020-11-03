@@ -16,7 +16,6 @@ export default function Header() {
         history.push('/');
     }
 
-    //ALTERAR ROTAS NOS SPAN'S
     return (
         <>
             <HeaderStyled>
