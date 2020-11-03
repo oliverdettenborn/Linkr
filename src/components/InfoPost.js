@@ -1,40 +1,40 @@
+import React from 'react';
 import styled from 'styled-components';
+import ReactHashtag from 'react-hashtag';
+import { useHistory } from 'react-router-dom';
 
-const Container = styled.div`
-    background: #171717;
-    width: 100%;
-    margin: 30px auto;
-    border-radius: 16px;
-    font-family: 'Lato', sans-serif;
-    display: flex;
-    color: #fff;
-    padding: 15px;
 
-    @media (max-width: 700px){
-        border-radius: 0;
-    }
+import ButtonsPost from './ButtonsPost';
 
-    > div:first-child {
-        text-align: center;
-        a {
-            > img {
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-            }
-        }
+export default function InfoPost({post,username}) {
+  const { text, link, linkTitle, linkDescription, linkImage} = post;
+  const history = useHistory();
 
-        span {
-            font-size: 11px;
-            color: #fff;
-        }
-        .tooltip {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 6px;
-            color: #505050;
-        }
-    }
-`;
+  return (
+    <ContainerInfos>
+        <ButtonsPost post={post} />
+        <h1>{username}</h1>
+        <p>
+            <ReactHashtag 
+                renderHashtag={hashtag => (
+                    <Hashtag onClick={() => history.push(`/hashtag/${hashtag.substr(1)}`)}>{hashtag}</Hashtag>
+                )}   
+            >
+                {text}
+            </ReactHashtag>
+        </p>
+
+        <LinkBox href={link} target='_blank'>
+            <div>
+                <h1>{linkTitle}</h1>
+                <p>{linkDescription}</p>
+                <span>{link}</span>
+            </div>
+            <img src={linkImage} alt={linkTitle} />
+        </LinkBox>
+    </ContainerInfos>
+  )
+};
 
 const ContainerInfos = styled.div`
     padding-left: 15px;
@@ -55,22 +55,6 @@ const ContainerInfos = styled.div`
         line-height: 20px;
         color: #B7B7B7;
         padding-top: 10px;
-    }
-`;
-
-const ContainerButtons = styled.div`
-    width: 45px;
-    height: 20px;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    font-size: 18px;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    svg{
-        cursor: pointer;
     }
 `;
 
@@ -129,20 +113,3 @@ const Hashtag = styled.span`
     font-weight: bold;
     color: #fff;
 `;
-
-const LikeStyled = styled.div`
-    svg {
-        font-size: 25px;
-        margin-top: 10px;
-        color: ${props => props.like ? "red" : "#fff"};
-    }
-`;
-
-export {
-  LikeStyled,
-  Hashtag,
-  LinkBox,
-  ContainerInfos,
-  Container,
-  ContainerButtons
-}
