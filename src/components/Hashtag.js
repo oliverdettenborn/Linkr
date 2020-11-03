@@ -16,7 +16,7 @@ export default function Hashtag() {
   const [loading,setLoading] = useState(true);
   const [hasMore,setHasMore] = useState(true);
   const [offset,setOffset] = useState(0);
-  const [hashtagAtual,setHashtagAtual] = useState(hashtag)
+  const [hashtagAtual] = useState(hashtag)
   
   useEffect(() => {
     axios

@@ -22,7 +22,7 @@ export default function UserTimeline() {
   const [loading,setLoading] = useState(true);
   const [hasMore,setHasMore] = useState(true);
   const [offset,setOffset] = useState(0);
-  const [locationAtual,setLocationAtual] = useState(id);
+  const [locationAtual] = useState(id);
   
   useEffect(() => {
     axios

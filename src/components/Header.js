@@ -8,7 +8,7 @@ import UserContext from '../context/UserContext';
 export default function Header() {
     const { user } = useContext(UserContext);
     const [state, setstate] = useState(false);
-    const { avatar,id,username } = user.user;
+    const { avatar,username } = user.user;
     const history = useHistory();
 
     function handleLogout() {
