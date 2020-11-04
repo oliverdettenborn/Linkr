@@ -2,6 +2,7 @@ import React,{useContext} from 'react';
 import styled from 'styled-components';
 import ReactHashtag from 'react-hashtag';
 import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import UserContext from '../context/UserContext';
 import ButtonsPost from './ButtonsPost';
@@ -14,7 +15,9 @@ export default function InfoPost({post,username,id}) {
     return (
         <ContainerInfos>
             {(id === user.user.id) && <ButtonsPost post={post} />}
-            <h1>{username}</h1>
+            <Link to={`/user/${username}/${id}`}>
+                <h1>{username}</h1>
+            </Link>
             <p>
                 <ReactHashtag 
                     renderHashtag={hashtag => (

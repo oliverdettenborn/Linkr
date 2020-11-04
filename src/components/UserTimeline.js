@@ -13,6 +13,7 @@ export default function UserTimeline() {
   const {user} = useContext(UserContext);
   const location = useLocation();
   let {id,userName} = useParams();
+  
   if(location.pathname === '/my-posts'){
     id = user.user.id;
     userName = user.user.username;
