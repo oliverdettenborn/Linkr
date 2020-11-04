@@ -1,32 +1,69 @@
-import React,{useContext} from 'react';
+import React,{useContext, useRef, useState} from 'react';
 import styled from 'styled-components';
 import ReactHashtag from 'react-hashtag';
-import { useHistory } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
+import axios from 'axios';
 
 import UserContext from '../context/UserContext';
 import ButtonsPost from './ButtonsPost';
 
 export default function InfoPost({post,username,id}) {
-    const { text, link, linkTitle, linkDescription, linkImage} = post;
+    const { text, link, linkTitle, linkDescription, linkImage, id: idPost} = post;
     const history = useHistory();
     const { user } = useContext(UserContext);
+    const [ auxText, setAuxText ] = useState(text);
+    const [ edit, setEdit ] = useState(false);
+    const refInput = useRef();
+
+    const getFocusInput = () => {
+        refInput.current.focus();
+    };
+
+    function openInput(){
+        setEdit(!edit);
+        getFocusInput();
+    }
+
+    function editTextPost(event){
+        event.preventDefault();
+        const {textDescription} = event.target.elements;
+        const dataEdit = {"text": textDescription.value};
+        const request = axios.put(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts/${idPost}`, dataEdit, {headers: {'user-token': user.token}});
+        request.then(reply => {
+            setEdit(!edit);
+        })
+        .catch(err => {
+            setAuxText(text);
+            alert('Não foi possível salvar as alterações.');
+        })
+    }
 
     return (
-        <ContainerInfos>
-            {(id === user.user.id) && <ButtonsPost post={post} />}
+        <ContainerInfos edit={edit}>
+            {(id === user.user.id) && <ButtonsPost post={post} openInput={openInput} />}
             <Link to={`/user/${username}/${id}`}>
                 <h1>{username}</h1>
             </Link>
+            
+            <form onSubmit={editTextPost}>
+                <input 
+                    type="text" 
+                    name="textDescription" 
+                    value={auxText} ref={refInput} 
+                    onChange={event => setAuxText(event.target.value)}
+                    disabled={edit ? false : true}>
+                </input>
+            </form>
             <p>
                 <ReactHashtag 
                     renderHashtag={hashtag => (
                         <Hashtag onClick={() => history.push(`/hashtag/${hashtag.substr(1)}`)}>{hashtag}</Hashtag>
                     )}   
                 >
-                    {text}
+                    {auxText}
                 </ReactHashtag>
             </p>
+            
 
             <LinkBox href={link} target='_blank'>
                 <div>
@@ -59,6 +96,16 @@ const ContainerInfos = styled.div`
         line-height: 20px;
         color: #B7B7B7;
         padding-top: 10px;
+        display: ${props => props.edit ? "none" : "block"}
+    }
+
+    form {
+        display: ${props => props.edit ? "block" : "none"}
+    }
+
+    input {
+        border-radius: 7px;
+        padding: 5px;
     }
 `;
 
