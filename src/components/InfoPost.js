@@ -25,22 +25,17 @@ export default function InfoPost({post,username,id}) {
     }
 
     function editTextPost(event){
-        event.preventDefault(); 
-        if(event.key === "13") {
-            const {textDescription} = event.target.elements;
-            const dataEdit = {"text": textDescription.value};
-            const request = axios.put(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts/${idPost}`, dataEdit, {headers: {'user-token': user.token}});
-            request.then(reply => {
-                setEdit(!edit);
-            })
-            .catch(err => {
-                setAuxText(text);
-                alert('Não foi possível salvar as alterações.');
-            })
-        } if(event.key === "27") {
-            setAuxText(text);
+        event.preventDefault();
+        const {textDescription} = event.target.elements;
+        const dataEdit = {"text": textDescription.value};
+        const request = axios.put(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts/${idPost}`, dataEdit, {headers: {'user-token': user.token}});
+        request.then(reply => {
             setEdit(!edit);
-        }
+        })
+        .catch(err => {
+            setAuxText(text);
+            alert('Não foi possível salvar as alterações.');
+        })
     }
 
     return (
