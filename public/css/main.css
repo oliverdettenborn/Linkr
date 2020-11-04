@@ -1,6 +1,9 @@
 body{
   background: #333333;
 }
+input:focus{
+  outline: transparent;
+}
 .fade-enter {
   left: -100vw;
   z-index: 1;
