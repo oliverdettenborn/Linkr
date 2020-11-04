@@ -22,15 +22,12 @@ export default function UserTimeline() {
   const [loading,setLoading] = useState(true);
   const [hasMore,setHasMore] = useState(true);
   const [offset,setOffset] = useState(0);
-  const [locationAtual] = useState(id);
   
   useEffect(() => {
     axios
       .get(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/users/${id}/posts?offset=${offset}&limit=2`,{headers: {"User-Token": user.token}})
       .then(response => {
-        location === locationAtual
-          ? setPosts([...posts,...response.data.posts])
-          : setPosts(response.data.posts)
+        setPosts([...posts,...response.data.posts])
         setLoading(false);
       })
       .catch(err => {
