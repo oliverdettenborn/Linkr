@@ -1,7 +1,7 @@
 import React,{useContext, useRef, useState} from 'react';
 import styled from 'styled-components';
 import ReactHashtag from 'react-hashtag';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import axios from 'axios';
 
 import UserContext from '../context/UserContext';
@@ -46,7 +46,9 @@ export default function InfoPost({post,username,id}) {
     return (
         <ContainerInfos edit={edit}>
             {(id === user.user.id) && <ButtonsPost post={post} openInput={openInput} />}
-            <h1>{username}</h1>
+            <Link to={`/user/${username}/${id}`}>
+                <h1>{username}</h1>
+            </Link>
             
             <form onSubmit={editTextPost}>
                 <input 

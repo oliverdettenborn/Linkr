@@ -4,6 +4,7 @@ import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import {useHistory,Link} from 'react-router-dom';
 
 import UserContext from '../context/UserContext';
+import SearchProfile from './SearchProfile';
 
 export default function Header() {
     const { user } = useContext(UserContext);
@@ -22,6 +23,7 @@ export default function Header() {
                 <h1>
                     <Link to='/timeline'>linkr</Link>
                 </h1>
+                <SearchProfile />
                 <div onClick={() => setstate(!state)}>
                     {state 
                         ? <FiChevronUp />
@@ -46,7 +48,7 @@ const HeaderStyled = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 75px;
   color: #fff;
   padding: 10px;
@@ -55,31 +57,30 @@ const HeaderStyled = styled.header`
   align-items: center;
   z-index: 2;
 
-  h1 {
-     font-family: 'Passion One', cursive;
-     font-weight: bold;
-     font-size: 50px;
-     line-height: 54px;
-     letter-spacing: 0.05em;
-  }
+    h1 {
+        font-family: 'Passion One', cursive;
+        font-weight: bold;
+        font-size: 50px;
+        line-height: 54px;
+        letter-spacing: 0.05em;
+    }
 
-  div {
+    & > div {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    svg {
-      font-size: 25px;
-    }
+        svg {
+        font-size: 25px;
+        }
 
-    img {
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        margin: 10px;
+        img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            margin: 10px;
+        }
     }
-  }
-  
 `;
 
 const Nav = styled.nav`
