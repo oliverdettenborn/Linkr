@@ -8,12 +8,12 @@ import StylePages from './StylePages';
 import UserContext from '../context/UserContext';
 import Post from './Post';
 import Load from './Load';
+import ButtonFollow from './ButtonFollow';
 
 export default function UserTimeline() {
   const {user} = useContext(UserContext);
   const location = useLocation();
   let {id,userName} = useParams();
-  
   if(location.pathname === '/my-posts'){
     id = user.user.id;
     userName = user.user.username;
@@ -43,6 +43,7 @@ export default function UserTimeline() {
   
   return (
       <StylePages title={(location.pathname === "/my-posts") ? 'my posts' : `${userName}'s post`}>
+        {location.pathname !== '/my-posts' && <ButtonFollow id={id} />}
         <InfiniteScroll
           pageStart={offset}
           loadMore={handleLoader}
