@@ -8,7 +8,7 @@ import {useLocation,useHistory} from 'react-router-dom';
 
 import UserContext from '../context/UserContext';
 
-export default function ButtonsPost({post,openInput}) {
+export default function ButtonsPost({post,toggleEdit}) {
   const [modalIsOpen,setIsOpen] = useState(false);
   const [loading,setLoading] = useState(false);
   const { user } = useContext(UserContext);
@@ -40,7 +40,7 @@ export default function ButtonsPost({post,openInput}) {
 
   return(
     <ContainerButtons>
-      <HiPencil onClick={() => openInput()}/>
+      <HiPencil onClick={() => toggleEdit()}/>
       <AiFillDelete onClick={openModal} />
       <Modal
           isOpen={modalIsOpen}

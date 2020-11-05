@@ -1,4 +1,4 @@
-import React,{useContext, useRef, useState} from 'react';
+import React,{useContext, useEffect, useRef, useState} from 'react';
 import styled from 'styled-components';
 import ReactHashtag from 'react-hashtag';
 import { useHistory, Link } from 'react-router-dom';
@@ -15,14 +15,13 @@ export default function InfoPost({post,username,id}) {
     const [ edit, setEdit ] = useState(false);
     const refInput = useRef();
 
-    const getFocusInput = () => {
-        refInput.current.focus();
-    };
-
-    function openInput(){
+    function toggleEdit() {
         setEdit(!edit);
-        getFocusInput();
     }
+
+    useEffect(() => {
+        edit && refInput.current.focus();
+    },[edit]);
 
     function editTextPost(event){
         event.preventDefault();
@@ -38,31 +37,44 @@ export default function InfoPost({post,username,id}) {
         })
     }
 
+    function escKeyDown(event) {
+        if(event.key === "Escape") {
+            toggleEdit();
+            setAuxText(text);
+        }
+    }
+
     return (
         <ContainerInfos edit={edit}>
-            {(id === user.user.id) && <ButtonsPost post={post} openInput={openInput} />}
+            {(id === user.user.id) && <ButtonsPost post={post} toggleEdit={toggleEdit} />}
             <Link to={`/user/${username}/${id}`}>
                 <h1>{username}</h1>
             </Link>
             
-            <form onSubmit={editTextPost}>
-                <input 
-                    type="text" 
-                    name="textDescription" 
-                    value={auxText} ref={refInput} 
-                    onChange={event => setAuxText(event.target.value)}
-                    disabled={edit ? false : true}>
-                </input>
-            </form>
-            <p>
-                <ReactHashtag 
-                    renderHashtag={hashtag => (
-                        <Hashtag onClick={() => history.push(`/hashtag/${hashtag.substr(1)}`)}>{hashtag}</Hashtag>
-                    )}   
-                >
-                    {auxText}
-                </ReactHashtag>
-            </p>
+            {edit 
+                ?   <form onSubmit={editTextPost}>
+                        <input 
+                            type="text" 
+                            name="textDescription" 
+                            value={auxText} 
+                            ref={refInput} 
+                            onChange={event => setAuxText(event.target.value)}
+                            onKeyDown={event => escKeyDown(event)}
+                            disabled={edit ? false : true}>
+                        </input>
+                    </form>
+                :   <p>
+                        <ReactHashtag 
+                            renderHashtag={hashtag => (
+                                <Hashtag onClick={() => history.push(`/hashtag/${hashtag.substr(1)}`)}>{hashtag}</Hashtag>
+                            )}   
+                        >
+                            {auxText}
+                        </ReactHashtag>
+                    </p>
+            
+            }
+            
             
 
             <LinkBox href={link} target='_blank'>
@@ -96,13 +108,7 @@ const ContainerInfos = styled.div`
         line-height: 20px;
         color: #B7B7B7;
         padding-top: 10px;
-        display: ${props => props.edit ? "none" : "block"}
     }
-
-    form {
-        display: ${props => props.edit ? "block" : "none"}
-    }
-
     input {
         border-radius: 7px;
         padding: 5px;
