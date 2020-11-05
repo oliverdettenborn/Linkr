@@ -23,8 +23,11 @@ export default function ButtonFollow({id}) {
     setSendRequest(true);
     console.log(user.token)
     axios
-      .post(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/users/${id}/${follow ? 'unfollow' : 'follow'}`,{headers: {"User-Token": user.token}})
-      .then(() => setFollow(!follow))
+      .post(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/users/${id}/${follow ? 'unfollow' : 'follow'}`,null,{headers: {"User-Token": user.token}})
+      .then(() => {
+        setFollow(!follow)
+        setSendRequest(false);
+      })
       .catch(err => {
         setSendRequest(false);
         alert('Não foi possível executar essa operação, tente novamente.');
@@ -70,5 +73,11 @@ const Button = styled.button`
   }
   &:focus{
     outline: transparent;
+  }
+
+  @media (max-width: 700px){
+    right: 0;
+    width: 100px;
+    top: 125px;
   }
 `;
