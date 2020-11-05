@@ -27,6 +27,7 @@ const Container = styled.div`
 
     @media (max-width: 700px){
         width: 100%;
+        margin-top: 150px;
     }
     @media (min-width: 1500px){
         width: 45%;
@@ -49,5 +50,8 @@ const Title = styled.h1`
         height: 50px;
         border-radius: 50%;
         margin-right: 10px;
+    }
+    @media (max-width: 700px){
+        font-size: 25px;
     }
 `;
