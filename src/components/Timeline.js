@@ -15,13 +15,22 @@ export default function Timeline() {
     const [loading,setLoading] = useState(true);
     const [hasMore,setHasMore] = useState(true);
     const [offset,setOffset] = useState(0);
+    const [followers,setFollowers] = useState([]);
+
+    useEffect(() => {
+        axios
+          .get('https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/users/follows',{headers: {"User-Token": user.token}})
+          .then(response => {
+            setFollowers(response.data.users);
+          })
+    }, []);
 
     function addNewPost(newPost){
         setPosts([newPost,...posts]);
     }
 
     useEffect(() => {
-        const request = axios.get(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts?offset=${offset}&limit=10`, {headers: {'user-token': user.token}});
+        const request = axios.get(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/following/posts?offset=${offset}&limit=10`, {headers: {'user-token': user.token}});
 
         request.then(reply => {
             setPosts([...posts,...reply.data.posts]);
@@ -29,10 +38,10 @@ export default function Timeline() {
         });
 
         request.catch(err => {
-            alert('Houve uma falha ao obter os posts, por favor atualize a página');
+            alert('Houve uma falha ao obter os posts, por favor atualize a página222');
         })
     },[offset]);
-
+    
     function handleLoader(){
         setHasMore(false);
         setOffset(offset+10);
@@ -50,9 +59,11 @@ export default function Timeline() {
                 {
                 loading
                     ? <Load />
-                    : posts.length === 0
-                    ? <Message>Nenhum post foi encontrado.</Message>
-                    : posts.map(p => <Post post={p} key={p.id} />)
+                    : followers.length === 0
+                            ? <Message>Você não segue ninguém ainda. Procure por perfis na busca.</Message>
+                            : posts.length === 0 
+                                ? <Message>Nenhuma publicação encontrada.</Message>
+                                : posts.map(p => <Post post={p} key={p.id} />) 
                 }
             </InfiniteScroll>
         </StylePages>  
@@ -64,4 +75,7 @@ const Message = styled.div`
     font-size: 30px;
     margin: 20px;
 `;
+
+
+
 

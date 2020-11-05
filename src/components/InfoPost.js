@@ -13,25 +13,25 @@ export default function InfoPost({post,username,id}) {
     const { user } = useContext(UserContext);
     const [ auxText, setAuxText ] = useState(text);
     const [ edit, setEdit ] = useState(false);
+    const [ sendRequest, setSendRequest ] = useState(false);
     const refInput = useRef();
-
-    function toggleEdit() {
-        setEdit(!edit);
-    }
 
     useEffect(() => {
         edit && refInput.current.focus();
     },[edit]);
 
     function editTextPost(event){
+        setSendRequest(true);
         event.preventDefault();
         const {textDescription} = event.target.elements;
         const dataEdit = {"text": textDescription.value};
         const request = axios.put(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts/${idPost}`, dataEdit, {headers: {'user-token': user.token}});
         request.then(reply => {
+            setSendRequest(false);
             setEdit(!edit);
         })
         .catch(err => {
+            setSendRequest(false);
             setAuxText(text);
             alert('Não foi possível salvar as alterações.');
         })
@@ -42,6 +42,10 @@ export default function InfoPost({post,username,id}) {
             toggleEdit();
             setAuxText(text);
         }
+    }
+
+    function toggleEdit() {
+        setEdit(!edit);
     }
 
     return (
@@ -60,7 +64,7 @@ export default function InfoPost({post,username,id}) {
                             ref={refInput} 
                             onChange={event => setAuxText(event.target.value)}
                             onKeyDown={event => escKeyDown(event)}
-                            disabled={edit ? false : true}>
+                            disabled={sendRequest ? true : false}>
                         </input>
                     </form>
                 :   <p>
