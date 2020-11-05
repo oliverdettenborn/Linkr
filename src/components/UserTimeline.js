@@ -13,37 +13,47 @@ import ButtonFollow from './ButtonFollow';
 export default function UserTimeline() {
   const {user} = useContext(UserContext);
   const location = useLocation();
-  let {id,userName} = useParams();
-  if(location.pathname === '/my-posts'){
-    id = user.user.id;
-    userName = user.user.username;
-  }
+  let {id} = useParams();
+  if(location.pathname === '/my-posts'){id = user.user.id;}
 
   const [posts,setPosts] = useState([]);
+  const [profile,setProfile] = useState({});
   const [loading,setLoading] = useState(true);
   const [hasMore,setHasMore] = useState(true);
   const [offset,setOffset] = useState(0);
   
   useEffect(() => {
-    axios
-      .get(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/users/${id}/posts?offset=${offset}&limit=2`,{headers: {"User-Token": user.token}})
-      .then(response => {
-        setPosts([...posts,...response.data.posts])
-        setLoading(false);
-      })
-      .catch(err => {
-        alert('Houve uma falha ao obter os posts, por favor atualize a página');
-      })
+    const userRequest = axios.get(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/users/${id}`,{headers: {"User-Token": user.token}})
+    userRequest.then(response => setProfile(response.data.user))
+  },[id])
+
+  useEffect(() => {
+    const postRequest = axios.get(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/users/${id}/posts?offset=${offset}&limit=2`,{headers: {"User-Token": user.token}})
+    postRequest.then(response => {
+      setPosts([...posts,...response.data.posts])
+      setLoading(false);
+    })
+    postRequest.catch(err => {
+      alert('Houve uma falha ao obter os posts, por favor atualize a página');
+    })
   },[id,offset])
 
   function handleLoader(){
     setHasMore(false);
     setOffset(offset+10);
   }
+
+  console.log(profile);
   
   return (
-      <StylePages title={(location.pathname === "/my-posts") ? 'my posts' : `${userName}'s post`}>
-        {location.pathname !== '/my-posts' && <ButtonFollow id={id} />}
+      <StylePages 
+        title={
+          (location.pathname === "/my-posts") 
+            ? 'my posts' 
+            : `${profile.username}'s post`}
+        avatar={profile.avatar}
+      >
+        {location.pathname !== '/my-posts' && <ButtonFollow id={profile.id} />}
         <InfiniteScroll
           pageStart={offset}
           loadMore={handleLoader}

@@ -9,7 +9,10 @@ export default function StylePages(props) {
         <div className='page'>
             <Header />
             <Container>
-                <Title>{props.title}</Title>
+                <Title>
+                    {props.avatar && <img src={props.avatar} />}
+                    {props.title}
+                </Title>
                 {props.children}
             </Container>
             <Trending />
@@ -39,4 +42,12 @@ const Title = styled.h1`
     line-height: 64px;
     color: #FFFFFF;
     margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    img{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
 `;
