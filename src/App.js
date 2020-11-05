@@ -19,7 +19,7 @@ export default function App({ location }) {
             <Route path='/' exact component={Login} />
             <Route path='/timeline' exact component={Timeline} isPrivate />
             <Route path='/hashtag/:hashtag' exact component={Hashtag} isPrivate />
-            <Route path='/user/:userName/:id' exact component={UserTimeline} isPrivate />
+            <Route path='/user/:id' exact component={UserTimeline} isPrivate />
             <Route path='/my-posts/' exact component={UserTimeline} isPrivate />
             <Route path='/my-likes/' exact component={LikesTimeline} isPrivate />
           </Switch>
