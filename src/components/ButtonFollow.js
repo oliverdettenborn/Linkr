@@ -76,8 +76,9 @@ const Button = styled.button`
   }
 
   @media (max-width: 700px){
+    position: absolute;
     right: 0;
-    width: 100px;
-    top: 125px;
+    width: 80px;
+    top: 170px;
   }
 `;

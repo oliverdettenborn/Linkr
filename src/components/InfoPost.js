@@ -98,7 +98,7 @@ const ContainerInfos = styled.div`
     width: 100%;
     position: relative;
 
-    > h1 {
+    & > h1 {
         font-size: 19px;
         line-height: 23px;
 
@@ -133,7 +133,6 @@ const LinkBox = styled.a`
 
     div {
         padding: 18px;
-
         h1 {
             font-size: 16px;
             line-height: 19px;
@@ -141,7 +140,6 @@ const LinkBox = styled.a`
             overflow-wrap: break-word;
             word-break: break-all;
         }
-
         p {
             font-size: 11px;
             line-height: 13px;
@@ -150,7 +148,6 @@ const LinkBox = styled.a`
             overflow-wrap: break-word;
             word-break: break-all;
         }
-
         span {
             font-size: 11px;
             line-height: 13px;
@@ -158,6 +155,21 @@ const LinkBox = styled.a`
             padding-bottom: 10px;
             overflow-wrap: break-word;
             word-break: break-all;
+        }
+        @media (max-width: 700px){
+            padding: 10px 5px 10px 10px;
+            h1{
+                font-size: 11px;
+                line-height: 13px;
+            }
+            p,span{
+                font-size: 9px;
+                line-height: 10px;
+                padding: 0;
+            }
+            p{
+                margin: 5px auto;
+            }
         }
     }
     
@@ -167,6 +179,11 @@ const LinkBox = styled.a`
         object-fit: cover;
         border-bottom-right-radius: 10px;
         border-top-right-radius: 10px;
+    }
+    @media (max-width: 700px){
+        img{
+            width: 95px;
+        }
     }
 `;
 

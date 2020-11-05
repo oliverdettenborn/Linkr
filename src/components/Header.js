@@ -23,39 +23,38 @@ export default function Header() {
                 <h1>
                     <Link to='/timeline'>linkr</Link>
                 </h1>
-                <SearchProfile />
-                <div onClick={() => setstate(!state)}>
+                <Menu onClick={() => setstate(!state)}>
                     {state 
                         ? <FiChevronUp />
                         : <FiChevronDown />
                     }
                     <img src={avatar} alt={username} />
-                </div>
+                </Menu>
+                <Nav state={state} >
+                    <span onClick={() => history.push(`/my-posts`)}>My posts</span> 
+                    <span onClick={() => history.push(`/my-likes/`)}>My likes</span>
+                    <span onClick={handleLogout}>Logout</span>
+                </Nav>
             </HeaderStyled>
-            
-            <Nav state={state} >
-                <span onClick={() => history.push(`/my-posts`)}>My posts</span> 
-                <span onClick={() => history.push(`/my-likes/`)}>My likes</span>
-                <span onClick={handleLogout}>Logout</span>
-            </Nav>
-            
+            <SearchProfile />
         </>
     );
 }
 
 const HeaderStyled = styled.header`
-  background: #151515;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 75px;
-  color: #fff;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 2;
+    background: #151515;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 75px;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
 
     h1 {
         font-family: 'Passion One', cursive;
@@ -64,24 +63,22 @@ const HeaderStyled = styled.header`
         line-height: 54px;
         letter-spacing: 0.05em;
     }
+`;
 
-    & > div {
+const Menu = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-
-        svg {
+    svg {
         font-size: 25px;
-        }
-
-        img {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            margin: 10px;
-        }
     }
-`;
+    img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        margin: 10px;
+    }
+`;   
 
 const Nav = styled.nav`
     background: #171717;
@@ -92,7 +89,7 @@ const Nav = styled.nav`
     right: 0px;
     text-align: center;
     transition: all 200ms linear;
-    z-index: 1;
+    z-index: 4;
 
     span {
         display: block;

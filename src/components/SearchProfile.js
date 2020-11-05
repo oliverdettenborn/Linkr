@@ -54,9 +54,22 @@ export default function SearchProfile() {
 };
 
 const Container = styled.div`
-  width: 40%;
+  width: 45%;
   border-radius: 8px;
   position: relative;
+  position: fixed;
+  top: 15px;
+  left: 25%;
+  right: 60%;
+  z-index: 6;
+
+  @media (max-width: 700px){
+    position: absolute;
+    width: 300px;
+    top: 90px;
+    left: calc((100% - 300px) / 2);
+    z-index: 3;
+  }
 `;
 
 const Profiles = styled.div`
@@ -88,17 +101,18 @@ const User = styled.div`
   font-family: 'Lato',sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 18px;
+  line-height: 30px;
   width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   
-  img{
+  img {
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    margin: 10px;
   }
   h6{
     color: #515151;
