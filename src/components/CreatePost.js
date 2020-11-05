@@ -1,24 +1,35 @@
 import React,{useContext,useState} from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import {CgPin} from 'react-icons/cg';
 
 import UserContext from '../context/UserContext';
 
 export default function CreatePost(props) {
   const {user} = useContext(UserContext);
   const [publishing, setPublishing] = useState(false);
-  const tokenUsuario = {"User-Token": user.token};
+  const [geolocation, setGeolocation] = useState(null);
+
+
+  function handleLocationUser(){
+    if ("geolocation" in navigator) {
+      (geolocation === null)
+        ? navigator.geolocation.getCurrentPosition(position => setGeolocation({latitude: position.coords.latitude, longitude: position.coords.longitude}))
+        : setGeolocation(null)
+    } else {
+      alert("Infelizmente o serviço de geolocalização não é suportado pelo seu navegador.");
+      setGeolocation(null);
+    }
+  }
 
   function submitPost(event){
     event.preventDefault();
     setPublishing(true)
-
     const {link,text} = event.target.elements
-    
-    const dataPost = {"link": link.value, "text": text.value};
+    const dataPost = {"link": link.value, "text": text.value,geolocation};
 
     axios
-      .post("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts",dataPost,{headers: tokenUsuario})
+      .post("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts",dataPost,{headers: {"User-Token": user.token}})
       .then(response => {
         props.addNewPost(response.data.post);
         setPublishing(false);
@@ -59,6 +70,10 @@ export default function CreatePost(props) {
           }
         </button>
       </form>
+      <Location locationUser={geolocation} onClick={handleLocationUser}>
+        <CgPin />
+        Localização {geolocation ? 'ativada' : 'desativada'}
+      </Location>
     </Container>
   )
 };
@@ -71,6 +86,7 @@ const Container = styled.div`
   border-radius: 16px;
   padding: 20px;
   display: flex;
+  position: relative;
 
   @media (max-width: 700px){
     border-radius: 0;
@@ -132,5 +148,27 @@ const Container = styled.div`
         margin-top: -10px;
       }
     }
+  }
+`;
+
+const Location = styled.button`
+  font-family: 'Lato',sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 16px;
+  border: none;
+  background: transparent;
+  color: ${props => props.locationUser ? '#238700' : '#707070'};
+  position: absolute;
+  bottom: 25px;
+  left: 85px;
+
+  svg{
+    font-size: 13px;
+    margin-right: 3px;
+  }
+  :focus{
+    outline: transparent;
   }
 `;

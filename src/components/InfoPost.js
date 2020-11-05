@@ -51,7 +51,7 @@ export default function InfoPost({post,username,id}) {
     return (
         <ContainerInfos edit={edit}>
             {(id === user.user.id) && <ButtonsPost post={post} toggleEdit={toggleEdit} />}
-            <Link to={`/user/${username}/${id}`}>
+            <Link to={`/user/${id}`}>
                 <h1>{username}</h1>
             </Link>
             
@@ -78,8 +78,6 @@ export default function InfoPost({post,username,id}) {
                     </p>
             
             }
-            
-            
 
             <LinkBox href={link} target='_blank'>
                 <div>

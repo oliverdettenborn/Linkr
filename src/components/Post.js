@@ -11,7 +11,7 @@ export default function Post({post}) {
     return (
         <Container>
             <div>
-                <Link to={`/user/${username}/${id}`}>
+                <Link to={`/user/${id}`}>
                     <img src={avatar} alt={username} />
                 </Link>
                 <LikePost post={post}/>
