@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import ReactHashtag from 'react-hashtag';
 import { useHistory, Link } from 'react-router-dom';
 import axios from 'axios';
+import {RiMapPin2Fill} from 'react-icons/ri';
 
 import UserContext from '../context/UserContext';
 import ButtonsPost from './ButtonsPost';
@@ -52,7 +53,10 @@ export default function InfoPost({post,username,id}) {
         <ContainerInfos edit={edit}>
             {(id === user.user.id) && <ButtonsPost post={post} toggleEdit={toggleEdit} />}
             <Link to={`/user/${id}`}>
-                <h1>{username}</h1>
+                <h1>
+                    {username}
+                    {post.geolocation && <RiMapPin2Fill />}
+                </h1>
             </Link>
             
             {edit 
@@ -96,12 +100,22 @@ const ContainerInfos = styled.div`
     width: 100%;
     position: relative;
 
-    & > h1 {
+    h1 {
         font-size: 19px;
         line-height: 23px;
 
         &:hover {
             cursor: pointer;
+        }
+        svg{
+            padding-left: 5px;
+            cursor: pointer;
+            font-size: 23px;
+            vertical-align: baseline;
+        }
+        svg:hover{
+            color: #AC0000;
+            opacity: 0.85;
         }
     }
 
