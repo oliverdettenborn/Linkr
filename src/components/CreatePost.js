@@ -26,8 +26,8 @@ export default function CreatePost(props) {
     event.preventDefault();
     setPublishing(true)
     const { link, text } = event.target.elements
-    const dataPost = {"link": link.value, "text": text.value, geolocation};
-
+    const dataPost = {"link": link.value, "text": text.value, geolocation : geolocation || {}};
+    console.log(dataPost);
     axios
       .post("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts", dataPost, {headers: {"User-Token": user.token}})
       .then(response => {
