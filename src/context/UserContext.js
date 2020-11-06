@@ -11,7 +11,7 @@ export function UserProvider(props){
   const [sendRequest,setSendRequest] = useState(false);
   const history = useHistory();
 
-  function SubmitLogIn(event){
+  function submitLogIn(event){
     event.preventDefault();
     setSendRequest(true);
     const {email,password} = event.target.elements
@@ -33,7 +33,7 @@ export function UserProvider(props){
       })
   }
 
-  function SubmitSingUp(event){
+  function submitSingUp(event){
     event.preventDefault();
     setSendRequest(true);
     const {email,password,username,pictureUrl} = event.target.elements
@@ -60,7 +60,13 @@ export function UserProvider(props){
   return (
     <UserContext.Provider 
       value={
-        {user,SubmitLogIn,SubmitSingUp,sendRequest,setSendRequest}
+        {
+          user,
+          submitLogIn,
+          submitSingUp,
+          sendRequest,
+          setSendRequest
+        }
       }
     >
       {props.children}

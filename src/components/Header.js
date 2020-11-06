@@ -100,5 +100,6 @@ const Nav = styled.nav`
         font-weight: bold;
         color: #fff;
         letter-spacing: 0.05em;
+        cursor: pointer;
     }
 `;   

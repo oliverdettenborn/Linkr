@@ -20,10 +20,10 @@ export default function Timeline() {
     useEffect(() => {
         updatePosts();
         axios
-          .get('https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/users/follows',{headers: {"User-Token": user.token}})
-          .then(response => {
-            setFollowers(response.data.users);
-          })
+            .get('https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/users/follows',{headers: {"User-Token": user.token}})
+            .then(response => {
+                setFollowers(response.data.users);
+            })
     }, []);
 
     useEffect(() => {

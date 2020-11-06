@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import {mediaMobile,mediaBigScreen} from './style/media';
 import Header from './Header';
 import Trending from './Trending';
 
@@ -25,11 +25,11 @@ const Container = styled.div`
     height: 100vh;
     margin: 105px 30% 0 auto;
 
-    @media (max-width: 700px){
+    ${mediaMobile}{
         width: 100%;
         margin-top: 150px;
     }
-    @media (min-width: 1500px){
+    ${mediaBigScreen}{
         width: 45%;
     }
 `;
@@ -51,7 +51,7 @@ const Title = styled.h1`
         border-radius: 50%;
         margin-right: 10px;
     }
-    @media (max-width: 700px){
+    ${mediaMobile}{
         font-size: 25px;
     }
 `;

@@ -2,6 +2,7 @@ import React, { useState,useEffect,useContext } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import UserContext from '../context/UserContext';
+import {mediaMobile} from './style/media'
 
 
 export default function ButtonFollow({id}) {
@@ -74,7 +75,7 @@ const Button = styled.button`
     outline: transparent;
   }
 
-  @media (max-width: 700px){
+  ${mediaMobile}{
     position: absolute;
     right: 0;
     width: 80px;

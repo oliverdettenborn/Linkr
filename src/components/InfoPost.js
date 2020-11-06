@@ -3,12 +3,13 @@ import styled from 'styled-components';
 import ReactHashtag from 'react-hashtag';
 import { useHistory, Link } from 'react-router-dom';
 import axios from 'axios';
-
+import {RiMapPin2Fill} from 'react-icons/ri';
+import {mediaMobile} from './style/media';
 import UserContext from '../context/UserContext';
 import ButtonsPost from './ButtonsPost';
 import YoutubePlayer from './YoutubePlayer';
 
-export default function InfoPost({post,username,id}) {
+export default function InfoPost({post,username,id,openMap}) {
     const { text, link, linkTitle, linkDescription, linkImage, id: idPost} = post;
     const history = useHistory();
     const { user } = useContext(UserContext);
@@ -53,10 +54,12 @@ export default function InfoPost({post,username,id}) {
     return (
         <ContainerInfos edit={edit}>
             {(id === user.user.id) && <ButtonsPost post={post} toggleEdit={toggleEdit} />}
-            <Link to={`/user/${id}`}>
-                <h1>{username}</h1>
-            </Link>
-            
+            <HeaderPost>
+                <Link to={`/user/${id}`}>
+                    <h1>{username}</h1>
+                </Link>
+                {post.geolocation && <RiMapPin2Fill className='pin-point' onClick={openMap} />}
+            </HeaderPost>
             {edit 
                 ?   <form onSubmit={editTextPost}>
                         <input 
@@ -103,15 +106,6 @@ const ContainerInfos = styled.div`
     width: 100%;
     position: relative;
 
-    & > h1 {
-        font-size: 19px;
-        line-height: 23px;
-
-        &:hover {
-            cursor: pointer;
-        }
-    }
-
     > p {
         font-size: 17px;
         line-height: 20px;
@@ -121,6 +115,27 @@ const ContainerInfos = styled.div`
     input {
         border-radius: 7px;
         padding: 5px;
+    }
+`;
+
+const HeaderPost = styled.div`
+    display: flex;
+    h1 {
+    font-size: 19px;
+    line-height: 23px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .pin-point{
+        padding-left: 5px;
+        cursor: pointer;
+        font-size: 23px;
+        vertical-align: baseline;
+    }
+    .pin-point:hover{
+        color: #AC0000;
+        opacity: 0.85;
     }
 `;
 
@@ -161,7 +176,7 @@ const LinkBox = styled.a`
             overflow-wrap: break-word;
             word-break: break-all;
         }
-        @media (max-width: 700px){
+        ${mediaMobile}{
             padding: 10px 5px 10px 10px;
             h1{
                 font-size: 11px;
@@ -185,7 +200,7 @@ const LinkBox = styled.a`
         border-bottom-right-radius: 10px;
         border-top-right-radius: 10px;
     }
-    @media (max-width: 700px){
+    ${mediaMobile}{
         img{
             width: 95px;
         }
@@ -195,4 +210,5 @@ const LinkBox = styled.a`
 const Hashtag = styled.span`
     font-weight: bold;
     color: #fff;
+    cursor: pointer;
 `;

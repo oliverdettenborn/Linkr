@@ -42,18 +42,16 @@ export default function UserTimeline() {
     setHasMore(false);
     setOffset(offset+10);
   }
-
-  console.log(profile);
   
   return (
       <StylePages 
         title={
-          (location.pathname === "/my-posts") 
+          (location.pathname === "/my-posts" || (profile.id === user.user.id)) 
             ? 'my posts' 
             : `${profile.username}'s post`}
         avatar={profile.avatar}
       >
-        {location.pathname !== '/my-posts' && <ButtonFollow id={profile.id} />}
+        {location.pathname !== '/my-posts' && (profile.id !== user.user.id) && <ButtonFollow id={profile.id} />}
         <InfiniteScroll
           pageStart={offset}
           loadMore={handleLoader}

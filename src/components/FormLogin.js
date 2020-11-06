@@ -2,10 +2,11 @@ import React, {useContext} from 'react';
 import styled from 'styled-components';
 
 import UserContext from '../context/UserContext';
+import {mediaMobile} from './style/media'
 
 export default function FormLogin(props) {
-  const {register, setRegister} = props;
-  const {SubmitLogIn,SubmitSingUp,sendRequest,setSendRequest} = useContext(UserContext);
+  const { register, setRegister } = props;
+  const { SubmitLogIn, SubmitSingUp, sendRequest, setSendRequest } = useContext(UserContext);
 
   return (
     <ContainerLogin
@@ -79,7 +80,7 @@ const ContainerLogin = styled.form`
   font-size: 25px;
   text-align: center;
 
-  @media (max-width: 700px){
+  ${mediaMobile}{
     height: calc(100% - 280px);
     width: 100%;
     justify-content: flex-start;

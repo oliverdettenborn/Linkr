@@ -4,7 +4,7 @@ import {DebounceInput} from 'react-debounce-input';
 import {BiSearch} from 'react-icons/bi';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
-
+import {mediaMobile} from './style/media';
 import UserContext from '../context/UserContext';
 
 export default function SearchProfile() {
@@ -63,7 +63,7 @@ const Container = styled.div`
   right: 60%;
   z-index: 6;
 
-  @media (max-width: 700px){
+  ${mediaMobile}{
     position: absolute;
     width: 300px;
     top: 90px;
