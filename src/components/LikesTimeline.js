@@ -16,7 +16,7 @@ export default function LikesTimeline() {
     const [offset,setOffset] = useState(0);
     useEffect(() => {
         const request = axios.get("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts/liked", {headers: {'user-token': user.token}});
-
+        
         request.then(reply => {
             setLikedPosts([...likedPosts,...reply.data.posts])
             setLoading(false);

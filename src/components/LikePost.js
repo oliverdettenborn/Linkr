@@ -11,10 +11,10 @@ export default function LikePost({post}) {
     const { id: idPost, likes } = post;
     const [ isLiked, setIsLiked ] = useState(false);
     const [ likesPost, setLikesPost ] = useState(0);
-
+    
     useEffect(() => {
         likes.forEach((l, index) => {
-            l.userId === user.user.id && setIsLiked(true);
+            (l.userId) ? (l.userId === user.user.id && setIsLiked(true)) : (l.id === user.user.id && setIsLiked(true));
             setLikesPost((index + 1));
         });
     },[]);
