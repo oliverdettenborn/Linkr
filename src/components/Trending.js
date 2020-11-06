@@ -21,13 +21,7 @@ export default function Trending() {
     event.preventDefault();
     let { hashtag } = event.target.elements;
     hashtag = hashtag.value;
-
-    trendings.forEach(t => {
-      if(t.name === hashtag) {
-        history.push(`/hashtag/${hashtag}`);
-      }
-    });
-
+    history.push(`/hashtag/${hashtag}`);
     event.target.reset();
   }
 
@@ -35,7 +29,7 @@ export default function Trending() {
     <Container>
       <h1>trending
         <form onSubmit={openHashtagPage}>
-          <Search placeholder='#...' name='hashtag'></Search>
+          <Search placeholder='#...' name='hashtag' />
         </form>
       </h1>
       {trendings.map(hashtag => 
