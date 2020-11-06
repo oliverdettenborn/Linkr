@@ -2,7 +2,7 @@ import React,{useContext,useState} from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import {CgPin} from 'react-icons/cg';
-
+import {mediaMobile} from './style/media';
 import UserContext from '../context/UserContext';
 
 export default function CreatePost(props) {
@@ -29,7 +29,7 @@ export default function CreatePost(props) {
     const dataPost = {"link": link.value, "text": text.value,geolocation};
 
     axios
-      .post("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts",dataPost,{headers: {"User-Token": user.token}})
+      .post("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts", dataPost, {headers: {"User-Token": user.token}})
       .then(response => {
         props.addNewPost(response.data.post);
         setPublishing(false);
@@ -88,7 +88,7 @@ const Container = styled.div`
   display: flex;
   position: relative;
 
-  @media (max-width: 700px){
+  ${mediaMobile}{
     border-radius: 0;
   }
 

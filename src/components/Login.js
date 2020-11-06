@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import {useHistory} from 'react-router-dom';
-
+import {mediaMobile} from './style/media';
 import FormLogin from './FormLogin';
 
 export default function Login() {
@@ -48,7 +48,7 @@ const ContainerLogo = styled.div`
     line-height: 64px;
   }
 
-  @media (max-width: 700px){
+  ${mediaMobile}{
     height: 280px;
     width: 100%;
     align-items: center;

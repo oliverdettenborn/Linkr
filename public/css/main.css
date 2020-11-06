@@ -27,3 +27,6 @@ input:focus{
   position: absolute;
   width: 100%;
 }
+button,a,svg{
+  cursor: pointer;
+}

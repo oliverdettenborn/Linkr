@@ -2,7 +2,7 @@ import React, {useState,useEffect,useContext} from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import {Link, useHistory} from 'react-router-dom';
-
+import {mediaMobile,mediaMedium} from './style/media';
 import UserContext from '../context/UserContext';
 
 export default function Trending() {
@@ -70,12 +70,12 @@ const Container = styled.aside`
     margin-bottom: 10px;
   }
 
-  @media (max-width: 1100px){
+  ${mediaMedium}{
     border-bottom: none;
     margin-bottom:none;
   }
 
-  @media (max-width: 700px){
+  ${mediaMobile}{
     display: none;
   }
 `;
@@ -107,7 +107,7 @@ const Search = styled.input`
   border-radius: 4px;
   border: none;
 
-  @media (max-width: 1100px){
+  ${mediaMedium}{
     position: initial;
     width: 100%;
     margin-top: 5px;

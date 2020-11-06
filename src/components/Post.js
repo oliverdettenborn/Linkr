@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
 import {IoIosClose} from 'react-icons/io';
-
+import {mediaMobile} from './style/media';
 import InfoPost from './InfoPost';
 import LikePost from './LikePost';
 import MapLocationUser from './MapLocationUser';
@@ -51,7 +51,7 @@ const Container = styled.div`
     color: #fff;
     padding: 15px;
 
-    @media (max-width: 700px){
+    ${mediaMobile}{
         border-radius: 0;
     }
 
@@ -110,7 +110,7 @@ const Map = styled.div`
         justify-content: space-between;
         align-items: center;
     }
-    @media (max-width: 700px){
+    ${mediaMobile}{
         width: 100%;
         left: 0;
         font-size: 20px;

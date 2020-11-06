@@ -34,7 +34,7 @@ export default function Hashtag() {
 
   function handleLoader(){
     setHasMore(false);
-    setOffset(offset+10);
+    setOffset(offset + 10);
   }
   
   return (
