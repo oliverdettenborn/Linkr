@@ -40,7 +40,7 @@ export default function SearchProfile() {
       <Profiles>
         {userSearch.map(p => 
           user.user.id !== p.id &&
-          <Link to={`/user/${p.username}/${p.id}`}>
+          <Link to={`/user/${p.id}`} key={p.id}>
             <User key={p.id}>
               <img src={p.avatar} alt={p.username} />
               <h6>{p.username}</h6>
