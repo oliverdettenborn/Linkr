@@ -102,11 +102,17 @@ const Map = styled.div`
     font-size: 30px;
     line-height: 50px;
     color: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
     h1{
         text-transform: capitalize;
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+    @media (max-width: 700px){
+        width: 100%;
+        left: 0;
+        font-size: 20px;
     }
 `;
