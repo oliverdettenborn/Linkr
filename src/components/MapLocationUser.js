@@ -1,7 +1,5 @@
-import { Map, GoogleApiWrapper,Marker,Circle } from 'google-maps-react';
-
-
-import apiKeyMaps from '../API_KEY/api_Maps';
+import { Map, GoogleApiWrapper, Marker, Circle } from 'google-maps-react';
+import { apiKeyMaps } from '../API_KEY/api_Maps';
 
 const mapStyle = {
   width: 'calc(100% - 77px)',
@@ -9,7 +7,7 @@ const mapStyle = {
   opacity: '1'
 };
 
-export function MapLocationUser({geolocation,google}) {
+export function MapLocationUser({ geolocation, google }) {
   let coords;
   geolocation
     ? coords = { lat: parseFloat(geolocation.latitude), lng: parseFloat(geolocation.longitude) }
@@ -31,7 +29,10 @@ export function MapLocationUser({geolocation,google}) {
         fillColor='#AC0000'
         fillOpacity={0.2}
       />
-      <Marker id={1} position={coords} />
+      <Marker 
+        id={1} 
+        position={coords} 
+      />
     </Map>
   );
 } 

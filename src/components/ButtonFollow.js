@@ -1,19 +1,19 @@
-import React, { useState,useEffect,useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import UserContext from '../context/UserContext';
-import {mediaMobile} from './style/media'
+import { mediaMobile } from './style/media'
 
 
 export default function ButtonFollow({id}) {
   const { user } = useContext(UserContext);
-  const [follow,setFollow] = useState(false);
-  const [followers,setFollowers] = useState([]);
-  const [sendRequest,setSendRequest] = useState(false)
+  const [ follow, setFollow ] = useState(false);
+  const [ followers, setFollowers ] = useState([]);
+  const [ sendRequest, setSendRequest ] = useState(false);
 
   useEffect(() => {
     axios
-      .get('https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/users/follows',{headers: {"User-Token": user.token}})
+      .get('https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/users/follows', {headers: {"User-Token": user.token}})
       .then(response => {
         setFollowers(response.data.users)
         setFollow(followers.filter(f => f.id.includes(id)).length === 1)
@@ -23,12 +23,12 @@ export default function ButtonFollow({id}) {
   function changeFollow(){
     setSendRequest(true);
     axios
-      .post(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/users/${id}/${follow ? 'unfollow' : 'follow'}`,null,{headers: {"User-Token": user.token}})
+      .post(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/users/${id}/${follow ? 'unfollow' : 'follow'}`, null, {headers: {"User-Token": user.token}})
       .then(() => {
         setFollow(!follow)
         setSendRequest(false);
       })
-      .catch(err => {
+      .catch(() => {
         setSendRequest(false);
         alert('Não foi possível executar essa operação, tente novamente.');
       })

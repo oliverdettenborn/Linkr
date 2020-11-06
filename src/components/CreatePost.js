@@ -1,14 +1,14 @@
-import React,{useContext,useState} from 'react';
+import React,{ useContext, useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import {CgPin} from 'react-icons/cg';
-import {mediaMobile} from './style/media';
+import { CgPin } from 'react-icons/cg';
+import { mediaMobile } from './style/media';
 import UserContext from '../context/UserContext';
 
 export default function CreatePost(props) {
-  const {user} = useContext(UserContext);
-  const [publishing, setPublishing] = useState(false);
-  const [geolocation, setGeolocation] = useState(null);
+  const { user } = useContext(UserContext);
+  const [ publishing, setPublishing ] = useState(false);
+  const [ geolocation, setGeolocation ] = useState(null);
 
 
   function handleLocationUser(){
@@ -25,9 +25,9 @@ export default function CreatePost(props) {
   function submitPost(event){
     event.preventDefault();
     setPublishing(true)
-    const {link,text} = event.target.elements
-    const dataPost = {"link": link.value, "text": text.value,geolocation};
-
+    const { link, text } = event.target.elements
+    const dataPost = {"link": link.value, "text": text.value, geolocation : geolocation || {}};
+    console.log(dataPost);
     axios
       .post("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts", dataPost, {headers: {"User-Token": user.token}})
       .then(response => {

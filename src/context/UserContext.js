@@ -1,5 +1,5 @@
 import React, { useState,createContext } from 'react';
-import {useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 const UserContext = createContext();
@@ -7,27 +7,27 @@ const UserContext = createContext();
 export default UserContext;
 
 export function UserProvider(props){
-  const [user,setUser] = useState(JSON.parse(localStorage.getItem('@linkr: JWT_TOKEN')));
-  const [sendRequest,setSendRequest] = useState(false);
+  const [ user, setUser ] = useState(JSON.parse(localStorage.getItem('@linkr: JWT_TOKEN')));
+  const [ sendRequest, setSendRequest ] = useState(false);
   const history = useHistory();
 
   function submitLogIn(event){
     event.preventDefault();
     setSendRequest(true);
-    const {email,password} = event.target.elements
+    const { email, password } = event.target.elements
     const dataLogin = {
       "email": email.value,
       "password": password.value
     }
     axios
-      .post("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/sign_in",dataLogin)
+      .post("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/sign_in", dataLogin)
       .then(response => {
         setUser(response.data);
-        localStorage.setItem('@linkr: JWT_TOKEN',JSON.stringify(response.data));
+        localStorage.setItem('@linkr: JWT_TOKEN', JSON.stringify(response.data));
         history.push('/timeline');
         setSendRequest(false);
       })
-      .catch(err => {
+      .catch(() => {
         setSendRequest(false);
         alert('Email/senha incorretos');
       })
@@ -36,7 +36,7 @@ export function UserProvider(props){
   function submitSingUp(event){
     event.preventDefault();
     setSendRequest(true);
-    const {email,password,username,pictureUrl} = event.target.elements
+    const { email, password, username, pictureUrl } = event.target.elements
     const dataSingUp = {
       "email": email.value,
       "password": password.value,

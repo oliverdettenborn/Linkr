@@ -1,16 +1,16 @@
-import React, {useState,useEffect,useContext} from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-import {DebounceInput} from 'react-debounce-input';
-import {BiSearch} from 'react-icons/bi';
+import { DebounceInput } from 'react-debounce-input';
+import { BiSearch } from 'react-icons/bi';
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
-import {mediaMobile} from './style/media';
+import { Link } from 'react-router-dom';
+import { mediaMobile } from './style/media';
 import UserContext from '../context/UserContext';
 
 export default function SearchProfile() {
   const { user } = useContext(UserContext);
-  const [userSearch,setUserSearch] = useState([]);
-  const [textInput,setTextInput] = useState('');
+  const [ userSearch, setUserSearch ] = useState([]);
+  const [ textInput, setTextInput ] = useState('');
 
   useEffect(() => {
     setUserSearch([]);

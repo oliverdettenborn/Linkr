@@ -1,14 +1,14 @@
 import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
-import {useHistory,Link} from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 import UserContext from '../context/UserContext';
 import SearchProfile from './SearchProfile';
 
 export default function Header() {
     const { user } = useContext(UserContext);
-    const [state, setstate] = useState(false);
+    const [ state, setstate ] = useState(false);
     const { avatar,username } = user.user;
     const history = useHistory();
 

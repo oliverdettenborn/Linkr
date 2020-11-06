@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import {useHistory} from 'react-router-dom';
-import {mediaMobile} from './style/media';
+import { useHistory } from 'react-router-dom';
+import { mediaMobile } from './style/media';
 import FormLogin from './FormLogin';
 
 export default function Login() {
@@ -75,7 +75,7 @@ const Container = styled.div`
   width: 100vw;
   height: 100vh;
 
-  @media (max-width: 700px){
+  ${mediaMobile}{
     flex-direction: column;
     background: #333333;
   }
