@@ -8,7 +8,7 @@ import Timeline from './components/Timeline';
 import Hashtag from './components/Hashtag';
 import UserTimeline from './components/UserTimeline';
 import LikesTimeline from './components/LikesTimeline';
-import {UserProvider} from './context/UserContext';
+import { UserProvider } from './context/UserContext';
 
 export default function App({ location }) {
   return (

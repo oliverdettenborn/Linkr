@@ -1,27 +1,27 @@
-import React, {useState,useEffect,useContext} from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import {Link, useHistory} from 'react-router-dom';
-import {mediaMobile,mediaMedium} from './style/media';
+import { Link, useHistory } from 'react-router-dom';
+import { mediaMobile, mediaMedium } from './style/media';
 import UserContext from '../context/UserContext';
 
 export default function Trending() {
-  const {user} = useContext(UserContext);
-  const [trendings,setTrendings] = useState([]);
+  const { user } = useContext(UserContext);
+  const [ trendings, setTrendings ] = useState([]);
   const history = useHistory();
 
   useEffect(() => {
-    const request = axios.get("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/hashtags/trending",{headers: {"User-Token": user.token}})
-    request.then(response => {
-      setTrendings(response.data.hashtags)
-    })
+    axios
+      .get("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/hashtags/trending",{headers: {"User-Token": user.token}})
+      .then(response => {
+        setTrendings(response.data.hashtags)
+      })
   },[])
 
   function openHashtagPage(event){
     event.preventDefault();
-    let { hashtag } = event.target.elements;
-    hashtag = hashtag.value;
-    history.push(`/hashtag/${hashtag}`);
+    const { hashtag } = event.target.elements;
+    history.push(`/hashtag/${hashtag.value}`);
     event.target.reset();
   }
 

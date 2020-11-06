@@ -3,7 +3,7 @@ import React from 'react';
 import YouTube from 'react-youtube';
 import styled from 'styled-components';
 
-export default function YoutubePlayer({link}) {
+export default function YoutubePlayer({ link }) {
     const id = getYouTubeID(link);
 
     return (

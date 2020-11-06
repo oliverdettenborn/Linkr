@@ -12,10 +12,10 @@ import Load from './Load'
 export default function Timeline() {
     const { user } = useContext(UserContext);
     const [ posts, setPosts ] = useState([]);
-    const [loading,setLoading] = useState(true);
-    const [hasMore,setHasMore] = useState(true);
-    const [offset,setOffset] = useState(0);
-    const [followers,setFollowers] = useState([]);
+    const [ loading, setLoading ] = useState(true);
+    const [ hasMore, setHasMore ] = useState(true);
+    const [ offset, setOffset ] = useState(0);
+    const [ followers, setFollowers ] = useState([]);
 
     useEffect(() => {
         updatePosts();
@@ -38,21 +38,20 @@ export default function Timeline() {
     }
     
     function updatePosts() {
-        const request = axios.get(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/following/posts?offset=${offset}&limit=10`, {headers: {'user-token': user.token}});
-
-        request.then(reply => {
-            setPosts([...posts,...reply.data.posts]);
-            setLoading(false);
-        });
-
-        request.catch(err => {
-            alert('Houve uma falha ao obter os posts, por favor atualize a página');
-        })
+        axios
+            .get(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/following/posts?offset=${offset}&limit=10`, {headers: {'user-token': user.token}})
+            .then(reply => {
+                setPosts([...posts,...reply.data.posts]);
+                setLoading(false);
+            })
+            .catch(err => {
+                alert('Houve uma falha ao obter os posts, por favor atualize a página');
+            })
     }
 
     function handleLoader(){
         setHasMore(false);
-        setOffset(offset+10);
+        setOffset(offset + 10);
     }
 
     return (

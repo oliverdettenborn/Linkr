@@ -1,15 +1,15 @@
-import React,{useContext, useEffect, useRef, useState} from 'react';
+import React,{ useContext, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import ReactHashtag from 'react-hashtag';
 import { useHistory, Link } from 'react-router-dom';
 import axios from 'axios';
-import {RiMapPin2Fill} from 'react-icons/ri';
-import {mediaMobile} from './style/media';
+import { RiMapPin2Fill } from 'react-icons/ri';
+import { mediaMobile } from './style/media';
 import UserContext from '../context/UserContext';
 import ButtonsPost from './ButtonsPost';
 import YoutubePlayer from './YoutubePlayer';
 
-export default function InfoPost({post,username,id,openMap}) {
+export default function InfoPost({ post, username, id, openMap }) {
     const { text, link, linkTitle, linkDescription, linkImage, id: idPost} = post;
     const history = useHistory();
     const { user } = useContext(UserContext);
@@ -21,14 +21,14 @@ export default function InfoPost({post,username,id,openMap}) {
 
     useEffect(() => {
         edit && refInput.current.focus();
-    },[edit]);
+    },[ edit ]);
 
     function editTextPost(event){
         setSendRequest(true);
         event.preventDefault();
-        const {textDescription} = event.target.elements;
+        const { textDescription } = event.target.elements;
         const dataEdit = {"text": textDescription.value};
-        const request = axios.put(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts/${idPost}`, dataEdit, {headers: {'user-token': user.token}});
+        const request = axios.put(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts/${ idPost }`, dataEdit, { headers: {'user-token': user.token} });
         request.then(reply => {
             setSendRequest(false);
             setEdit(!edit);
@@ -81,13 +81,9 @@ export default function InfoPost({post,username,id,openMap}) {
                             {auxText}
                         </ReactHashtag>
                     </p>
-            
             }
-
-
             {linkSplitted[2] === "www.youtube.com"
                 ?   <YoutubePlayer link={link} />
-
                 :   <LinkBox href={link} target='_blank'>
                         <div>
                             <h1>{linkTitle}</h1>
@@ -105,7 +101,6 @@ const ContainerInfos = styled.div`
     padding-left: 15px;
     width: 100%;
     position: relative;
-
     > p {
         font-size: 17px;
         line-height: 20px;
@@ -150,7 +145,6 @@ const LinkBox = styled.a`
     &:hover{
         cursor: pointer;
     }
-
     div {
         padding: 18px;
         h1 {

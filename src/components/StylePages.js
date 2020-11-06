@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {mediaMobile,mediaBigScreen} from './style/media';
+import { mediaMobile, mediaBigScreen } from './style/media';
 import Header from './Header';
 import Trending from './Trending';
 

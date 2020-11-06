@@ -1,8 +1,8 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 
 import UserContext from '../context/UserContext';
-import {mediaMobile} from './style/media'
+import { mediaMobile } from './style/media'
 
 export default function FormLogin(props) {
   const { register, setRegister } = props;
@@ -88,37 +88,37 @@ const ContainerLogin = styled.form`
   }
 
   input {
-      padding-left: 5px;
-      color: #9F9F9F; 
-    }
+    padding-left: 5px;
+    color: #9F9F9F; 
+  }
 
-    input, button {
-      width: 80%;
-      margin: 5px auto;
+  input, button {
+    width: 80%;
+    margin: 5px auto;
+    height: 40px;
+    border-radius: 6px;
+    border: none;
+  }
+
+  button {
+    background: #1877F2;
+    color: #fff;
+
+    img{
       height: 40px;
-      border-radius: 6px;
-      border: none;
+      width: auto;
+      margin-top: -10px;
     }
+  }
 
-    button {
-      background: #1877F2;
-      color: #fff;
-
-      img{
-        height: 40px;
-        width: auto;
-        margin-top: -10px;
-      }
-    }
-
-    span {
-      font-family: 'Lato', sans-serif;
-      font-size: 14px;
-      text-decoration: underline;
-      font-weight: 400;
-      padding-top: 5px;
-      display: block;
-      color: #fff;
-    }
+  span {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    text-decoration: underline;
+    font-weight: 400;
+    padding-top: 5px;
+    display: block;
+    color: #fff;
+  }
 `;
 

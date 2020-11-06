@@ -10,21 +10,20 @@ import Load from './Load'
 
 export default function LikesTimeline() {
     const { user } = useContext(UserContext);
-    const [loading,setLoading] = useState(true);
-    const [likedPosts, setLikedPosts] = useState([]);
-    const [hasMore,setHasMore] = useState(true);
-    const [offset,setOffset] = useState(0);
+    const [ loading, setLoading ] = useState(true);
+    const [ likedPosts, setLikedPosts ] = useState([]);
+    const [ hasMore, setHasMore ] = useState(true);
+    const [ offset, setOffset ] = useState(0);
     useEffect(() => {
-        const request = axios.get("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts/liked", {headers: {'user-token': user.token}});
-
-        request.then(reply => {
-            setLikedPosts([...likedPosts,...reply.data.posts])
-            setLoading(false);
-        });
-
-        request.catch(err => {
-            alert('Houve uma falha ao obter os posts, por favor atualize a página');
-        })
+        axios
+            .get("https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/posts/liked", {headers: {'user-token': user.token}})
+            .then(reply => {
+                setLikedPosts([...likedPosts,...reply.data.posts])
+                setLoading(false);
+            })
+            .catch(err => {
+                alert('Houve uma falha ao obter os posts, por favor atualize a página');
+            })
     },[offset]);
 
     function handleLoader(){

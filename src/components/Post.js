@@ -1,16 +1,16 @@
-import React,{useState} from 'react';
+import React,{ useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
-import {IoIosClose} from 'react-icons/io';
-import {mediaMobile} from './style/media';
+import { IoIosClose } from 'react-icons/io';
+import { mediaMobile } from './style/media';
 import InfoPost from './InfoPost';
 import LikePost from './LikePost';
 import MapLocationUser from './MapLocationUser';
 
 export default function Post({post}) {
     const { username, avatar, id } = post.user;
-    const [modalIsOpen,setIsOpen] = useState(false);
+    const [ modalIsOpen, setIsOpen ] = useState(false);
 
     function openMap() {
         setIsOpen(true);
@@ -54,7 +54,6 @@ const Container = styled.div`
     ${mediaMobile}{
         border-radius: 0;
     }
-
     > div:first-child {
         text-align: center;
         a {
@@ -64,7 +63,6 @@ const Container = styled.div`
                 border-radius: 50%;
             }
         }
-
         span {
             font-size: 11px;
             color: #fff;
