@@ -6,12 +6,12 @@ import { mediaMobile } from './style/media'
 
 export default function FormLogin(props) {
   const { register, setRegister } = props;
-  const { SubmitLogIn, SubmitSingUp, sendRequest, setSendRequest } = useContext(UserContext);
+  const { submitLogIn, submitSingUp, sendRequest, setSendRequest } = useContext(UserContext);
 
   return (
     <ContainerLogin
       onSubmit={
-        register ? SubmitSingUp : SubmitLogIn
+        register ? submitSingUp : submitLogIn
       }
     >
       <input 
