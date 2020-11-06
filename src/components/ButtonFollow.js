@@ -21,7 +21,6 @@ export default function ButtonFollow({id}) {
 
   function changeFollow(){
     setSendRequest(true);
-    console.log(user.token)
     axios
       .post(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/users/${id}/${follow ? 'unfollow' : 'follow'}`,null,{headers: {"User-Token": user.token}})
       .then(() => {

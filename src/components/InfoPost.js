@@ -6,6 +6,7 @@ import axios from 'axios';
 
 import UserContext from '../context/UserContext';
 import ButtonsPost from './ButtonsPost';
+import YoutubePlayer from './YoutubePlayer';
 
 export default function InfoPost({post,username,id}) {
     const { text, link, linkTitle, linkDescription, linkImage, id: idPost} = post;
@@ -14,6 +15,7 @@ export default function InfoPost({post,username,id}) {
     const [ auxText, setAuxText ] = useState(text);
     const [ edit, setEdit ] = useState(false);
     const [ sendRequest, setSendRequest ] = useState(false);
+    const linkSplitted = link.split("/");
     const refInput = useRef();
 
     useEffect(() => {
@@ -79,14 +81,19 @@ export default function InfoPost({post,username,id}) {
             
             }
 
-            <LinkBox href={link} target='_blank'>
-                <div>
-                    <h1>{linkTitle}</h1>
-                    <p>{linkDescription}</p>
-                    <span>{link}</span>
-                </div>
-                <img src={linkImage} alt={linkTitle} />
-            </LinkBox>
+
+            {linkSplitted[2] === "www.youtube.com"
+                ?   <YoutubePlayer link={link} />
+
+                :   <LinkBox href={link} target='_blank'>
+                        <div>
+                            <h1>{linkTitle}</h1>
+                            <p>{linkDescription}</p>
+                            <span>{link}</span>
+                        </div>
+                        <img src={linkImage} alt={linkTitle} />
+                    </LinkBox>
+            }
         </ContainerInfos>
     )
 };

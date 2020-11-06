@@ -66,8 +66,20 @@ export default function LikePost({post}) {
                 }
             </LikeStyled>
             {isLiked
-                ? <span data-tip={tooltipText(likes, isLiked)} data-class={'tooltip'} data-place={'bottom'} data-arrow-color={'rgba(255, 255, 255, 0.9)'}>{likesPost} likes</span>
-                : <span data-tip={tooltipText(likes, isLiked)} data-class={'tooltip'} data-place={'bottom'} data-arrow-color={'rgba(255, 255, 255, 0.9)'}>{likesPost} likes</span>
+                ? <span 
+                    data-tip={tooltipText(likes, isLiked)} 
+                    data-class={'tooltip'} 
+                    data-place={'bottom'} 
+                    data-arrow-color={'rgba(255, 255, 255, 0.9)'}>
+                        {likesPost} likes
+                  </span>
+                : <span 
+                    data-tip={tooltipText(likes, isLiked)} 
+                    data-class={'tooltip'} 
+                    data-place={'bottom'} 
+                    data-arrow-color={'rgba(255, 255, 255, 0.9)'}>
+                        {likesPost} likes
+                 </span>
             }   
             <ReactTooltip />
         </>

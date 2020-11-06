@@ -26,16 +26,16 @@ export default function Timeline() {
           })
     }, []);
 
-    function addNewPost(newPost){
-        setPosts([newPost,...posts]);
-    }
-
     useEffect(() => {
         const interval = setInterval(() => {
             updatePosts();
         }, 15000);
         return () => clearInterval(interval);
     },[offset]);
+
+    function addNewPost(newPost){
+        setPosts([newPost,...posts]);
+    }
     
     function updatePosts() {
         const request = axios.get(`https://mock-api.bootcamp.respondeai.com.br/api/v1/linkr/following/posts?offset=${offset}&limit=10`, {headers: {'user-token': user.token}});
@@ -46,7 +46,7 @@ export default function Timeline() {
         });
 
         request.catch(err => {
-            alert('Houve uma falha ao obter os posts, por favor atualize a página222');
+            alert('Houve uma falha ao obter os posts, por favor atualize a página');
         })
     }
 
