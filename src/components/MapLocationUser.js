@@ -1,5 +1,5 @@
 import { Map, GoogleApiWrapper, Marker, Circle } from 'google-maps-react';
-import { apiKeyMaps } from '../API_KEY/api_Maps';
+import { apiKeyMaps } from '../../env';
 
 const mapStyle = {
   width: 'calc(100% - 77px)',
