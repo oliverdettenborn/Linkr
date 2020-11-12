@@ -73,7 +73,7 @@ const Container = styled.aside`
   }
 `;
 
-const Item = styled.div`
+const Item = styled.p`
   font-family: 'Lato', sans-serif;
   font-style: normal;
   font-weight: bold;
