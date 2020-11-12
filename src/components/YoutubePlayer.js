@@ -10,6 +10,7 @@ export default function YoutubePlayer({ link }) {
         <Player>
             <YouTube
             videoId={id}
+            onReady={(e) => e.target.pauseVideo()}
             opts={{
             width: '100%',
             height: '400px',
