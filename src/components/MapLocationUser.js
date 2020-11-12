@@ -1,5 +1,5 @@
 import { Map, GoogleApiWrapper, Marker, Circle } from 'google-maps-react';
-
+import { apiKeyMaps } from '../../env';
 const mapStyle = {
   width: 'calc(100% - 77px)',
   height: '200px',
@@ -42,5 +42,5 @@ export function MapLocationUser({ geolocation, google }) {
 } 
 
 export default GoogleApiWrapper({
-  apiKey: "apiKeyMaps"
+  apiKey: apiKeyMaps
 })(MapLocationUser);
