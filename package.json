@@ -2,6 +2,7 @@
   "name": "linkr",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://thaliadettenborn.github.io/Linkr",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -27,7 +28,6 @@
     "tooltip": "^1.6.1",
     "web-vitals": "^0.2.4"
   },
-  "homepage": "https://thaliadettenborn.github.io/Linkr",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

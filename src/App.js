@@ -12,7 +12,7 @@ import { UserProvider } from './context/UserContext';
 
 export default function App({ location }) {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
       <UserProvider>
         <Transitions>
           <Switch location={location}>
