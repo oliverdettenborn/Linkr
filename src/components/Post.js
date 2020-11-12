@@ -12,7 +12,8 @@ export default function Post({post}) {
     const { username, avatar, id } = post.user;
     const [ modalIsOpen, setIsOpen ] = useState(false);
 
-    function openMap() {
+    function openMap(event) {
+        event.stopPropagation();
         setIsOpen(true);
     }
 

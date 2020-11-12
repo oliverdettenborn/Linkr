@@ -16,7 +16,6 @@ export default function InfoPost({ post, username, id, openMap }) {
     const [ auxText, setAuxText ] = useState(text);
     const [ edit, setEdit ] = useState(false);
     const [ sendRequest, setSendRequest ] = useState(false);
-    const linkSplitted = link.split("/");
     const refInput = useRef();
 
     useEffect(() => {
@@ -82,7 +81,7 @@ export default function InfoPost({ post, username, id, openMap }) {
                         </ReactHashtag>
                     </p>
             }
-            {linkSplitted[2] === "https://www.youtube.com"
+            {link.includes("youtube.com")
                 ?   <YoutubePlayer link={link} />
                 :   <LinkBox href={link} target='_blank'>
                         <div>
