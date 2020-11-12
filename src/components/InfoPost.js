@@ -82,7 +82,7 @@ export default function InfoPost({ post, username, id, openMap }) {
                         </ReactHashtag>
                     </p>
             }
-            {linkSplitted[2] === "www.youtube.com"
+            {linkSplitted[2] === "https://www.youtube.com"
                 ?   <YoutubePlayer link={link} />
                 :   <LinkBox href={link} target='_blank'>
                         <div>

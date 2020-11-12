@@ -1,5 +1,5 @@
 import { Map, GoogleApiWrapper, Marker, Circle } from 'google-maps-react';
-import { apiKeyMaps } from '/../env';
+import { apiKeyMaps } from '../env';
 
 const mapStyle = {
   width: 'calc(100% - 77px)',
@@ -13,6 +13,11 @@ export function MapLocationUser({ geolocation, google }) {
     ? coords = { lat: parseFloat(geolocation.latitude), lng: parseFloat(geolocation.longitude) }
     : coords = { lat: 0, lng: 0 }
 
+  if(!apiKeyMaps){
+    return(
+      <div></div>
+    )
+  }
   return (
     <Map
       google={google}
