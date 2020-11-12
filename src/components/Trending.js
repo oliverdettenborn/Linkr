@@ -45,7 +45,6 @@ export default function Trending() {
 
 const Container = styled.aside`
   width: 20%;
-  height: 406px;
   position: fixed;
   top: 199px;
   right: 6%;
@@ -84,6 +83,8 @@ const Item = styled.div`
   color: #FFFFFF;
   padding: 0 20px;
   margin-bottom: 8px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 `;
 
 const Search = styled.input`
