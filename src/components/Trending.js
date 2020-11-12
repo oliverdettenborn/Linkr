@@ -35,7 +35,7 @@ export default function Trending() {
       {trendings.map(hashtag => 
         <Link to={`/hashtag/${hashtag.name}`} key={hashtag.id}>
           <Item key={hashtag.id}>
-            {`# ${hashtag.name}`}
+            {`#${hashtag.name}`}
           </Item>
         </Link>
       )}
