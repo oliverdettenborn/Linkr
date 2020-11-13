@@ -35,7 +35,7 @@ export default function Post({post}) {
                         {`${username}’s location`}
                         <IoIosClose onClick={() => setIsOpen(false)} />
                     </h1>
-                    {/* <MapLocationUser geolocation={post.geolocation} /> */}
+                    <MapLocationUser geolocation={post.geolocation} />
                 </Map>
             </Modal>
         </Container>
