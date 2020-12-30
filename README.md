@@ -4,7 +4,7 @@
 
 # Linkr
 
- ![license](https://img.shields.io/github/license/thaliadettenborn/Linkr?style=flat-square) ![total lines](https://img.shields.io/tokei/lines/github/thaliadettenborn/Linkr) ![last commit](https://img.shields.io/github/last-commit/thaliadettenborn/Linkr?style=flat-square) ![issues](https://img.shields.io/github/issues/thaliadettenborn/Linkr) ![forks](https://img.shields.io/github/forks/thaliadettenborn/Linkr?style=flat-square)
+ ![license](https://img.shields.io/github/license/thaliadettenborn/Linkr?style=flat-square) ![total lines](https://img.shields.io/tokei/lines/github/thaliadettenborn/Linkr) ![last commit](https://img.shields.io/github/last-commit/thaliadettenborn/Linkr?style=flat-square) ![issues](https://img.shields.io/github/package-json/v/thaliadettenborn/Linkr?style=flat-square) ![forks](https://img.shields.io/github/forks/thaliadettenborn/Linkr?style=flat-square)
 
 
 
@@ -149,6 +149,5 @@ The application layout is available on Vercel:
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMxNzU5MTE2MSwtNzA1MDgyODczLC0yMD
-g1NDgyMDc4LC0xNDU5NTMxNTcyLDU4NzMxOTIwNF19
+eyJoaXN0b3J5IjpbLTEzMTM1NDY2MDldfQ==
 -->
