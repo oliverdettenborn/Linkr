@@ -5,7 +5,7 @@
 # Linkr
 
 
-![Badge](https://img.shields.io/github/issues/thaliadettenborn/Linkr)  ![Badge](https://img.shields.io/github/forks/thaliadettenborn/Linkr?style=flat-square) ![Badge](https://img.shields.io/github/forks/thaliadettenborn/Linkr?style=flat-square) ![Badge](https://img.shields.io/github/forks/thaliadettenborn/Linkr?style=flat-square) ![Badge](https://img.shields.io/github/forks/thaliadettenborn/Linkr?style=flat-square)
+![Badge](https://img.shields.io/github/issues/thaliadettenborn/Linkr)  ![Badge](https://img.shields.io/github/forks/thaliadettenborn/Linkr?style=flat-square) ![Badge](https://img.shields.io/github/license/thaliadettenborn/Linkr?style=flat-square) ![Badge](https://img.shields.io/github/forks/thaliadettenborn/Linkr?style=flat-square) ![Badge](https://img.shields.io/github/forks/thaliadettenborn/Linkr?style=flat-square)
 
 
 
@@ -150,6 +150,6 @@ The application layout is available on Vercel:
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NjYwNTQ1MjAsLTE0NTk1MzE1NzIsNT
+eyJoaXN0b3J5IjpbLTIwMzExMTUyNzIsLTE0NTk1MzE1NzIsNT
 g3MzE5MjA0XX0=
 -->
