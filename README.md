@@ -130,8 +130,8 @@ The application layout is available on Vercel:
   </p>
 
 <p align='center' width='250px'>
-	  <img src="https://avatars0.githubusercontent.com/u/70967247?s=460&u=0684339f0717ae41ce18689351f0215fdf270590&v=4" width="100px;"/> <br />
- <sub><b>Thalia Dettenborn</b></sub></a> <br />
+	  <img src="https://media-exp1.licdn.com/dms/image/C4D03AQHHonLndu4rWQ/profile-displayphoto-shrink_200_200/0/1558406909827?e=1614816000&v=beta&t=OHmyUt5ztReb5aioZAhIzV1qdg8kZkpK60PcbepjhCo" width="100px;"/> <br />
+ <sub><b>Thiago Ribeiro</b></sub></a> <br />
 	  <a href="https://www.linkedin.com/in/thaliarobertadettenborn/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a>
 	  <a href="mailto:thalia.born@gmail.com"><img src="https://img.shields.io/badge/gmail-D14836?&style=for-the-badge&logo=gmail&logoColor=white"/></a>
 	  <a href="https://github.com/thaliadettenborn"><img src="https://img.shields.io/badge/github-%23100000.svg?&style=for-the-badge&logo=github&logoColor=white" /></a>
@@ -139,6 +139,6 @@ The application layout is available on Vercel:
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU3MTQ1NjEzMiw4NDUyMDczNzgsLTE5Mz
-k5NjgxNDYsNzY3NjIwMDMzLDc2NzYyMDAzM119
+eyJoaXN0b3J5IjpbNjE3MjEwMzI1LDg0NTIwNzM3OCwtMTkzOT
+k2ODE0Niw3Njc2MjAwMzMsNzY3NjIwMDMzXX0=
 -->
