@@ -111,13 +111,17 @@ The application layout is available on Vercel:
 
 
 ### Contributors
-
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/responde-ai"><img style="border-radius: 50%;" src="https://avatars3.githubusercontent.com/u/40724166?s=200&v=4" width="100px;" alt=""/><br /><sub><b>Diego Fernandes</b></sub></a><br /><a href="https://rocketseat.com.br/" title="Rocketseat">👨‍🚀</a></td>
+  </tr>
+</table>
 
 ### Authors
 ---
 
 Made by Thalia Dettenborn and Thiago Ribeiro 👋🏽 Get in Touch!
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5Mzk5NjgxNDYsNzY3NjIwMDMzLDc2Nz
-YyMDAzM119
+eyJoaXN0b3J5IjpbMTY1NjEzODQ4OSwtMTkzOTk2ODE0Niw3Nj
+c2MjAwMzMsNzY3NjIwMDMzXX0=
 -->
