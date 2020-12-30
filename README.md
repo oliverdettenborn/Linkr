@@ -105,10 +105,13 @@ Version Control:<br>
 </p>
 
 
+
 ### Deploy
 
 The application layout is available on Vercel:
 <a style='margin-left: 10px;' href='https://linkr-dun.vercel.app/'><img src='https://img.shields.io/badge/vercel%20-%23000000.svg?&style=for-the-badge&logo=vercel&logoColor=white'></a>
+
+
 
 
 ### Contributors
@@ -142,5 +145,5 @@ The application layout is available on Vercel:
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4OTUwNzk0MDIsNTg3MzE5MjA0XX0=
+eyJoaXN0b3J5IjpbLTE0NTk1MzE1NzIsNTg3MzE5MjA0XX0=
 -->
