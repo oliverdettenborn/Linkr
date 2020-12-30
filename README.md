@@ -122,15 +122,23 @@ The application layout is available on Vercel:
 <p align='center'>
   Made by Thalia Dettenborn and Thiago Ribeiro 👋🏽 Get in Touch! <br><br>
   <p align='center' width='250px'>
-	  <img src="https://avatars0.githubusercontent.com/u/70967247?s=460&u=0684339f0717ae41ce18689351f0215fdf270590&v=4" width="100px;"/> <br>
+	  <img src="https://avatars0.githubusercontent.com/u/70967247?s=460&u=0684339f0717ae41ce18689351f0215fdf270590&v=4" width="100px;"/> <br />
+ <sub><b>Thalia Dettenborn</b></sub></a> <br />
 	  <a href="https://www.linkedin.com/in/thaliarobertadettenborn/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a>
-	  [![Gmail Badge](https://img.shields.io/badge/-thalia.born@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:tgmarinho@gmail.com)](mailto:tgmarinho@gmail.com)
+	  <a href="mailto:thalia.born@gmail.com"><img src="https://img.shields.io/badge/gmail-D14836?&style=for-the-badge&logo=gmail&logoColor=white"/></a>
+	  <a href="https://github.com/thaliadettenborn"><img src="https://img.shields.io/badge/github-%23100000.svg?&style=for-the-badge&logo=github&logoColor=white" /></a>
+  </p>
+
+<p align='center' width='250px'>
+	  <img src="https://avatars0.githubusercontent.com/u/70967247?s=460&u=0684339f0717ae41ce18689351f0215fdf270590&v=4" width="100px;"/> <br />
+ <sub><b>Thalia Dettenborn</b></sub></a> <br />
+	  <a href="https://www.linkedin.com/in/thaliarobertadettenborn/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a>
 	  <a href="mailto:thalia.born@gmail.com"><img src="https://img.shields.io/badge/gmail-D14836?&style=for-the-badge&logo=gmail&logoColor=white"/></a>
 	  <a href="https://github.com/thaliadettenborn"><img src="https://img.shields.io/badge/github-%23100000.svg?&style=for-the-badge&logo=github&logoColor=white" /></a>
   </p>
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI3ODMxMDg0LDg0NTIwNzM3OCwtMTkzOT
-k2ODE0Niw3Njc2MjAwMzMsNzY3NjIwMDMzXX0=
+eyJoaXN0b3J5IjpbLTU3MTQ1NjEzMiw4NDUyMDczNzgsLTE5Mz
+k5NjgxNDYsNzY3NjIwMDMzLDc2NzYyMDAzM119
 -->
