@@ -114,6 +114,7 @@ The application layout is available on Vercel:
 <table>
   <tr>
     <td align="center"><a href="https://github.com/responde-ai"><img style="border-radius: 50%;" src="https://avatars3.githubusercontent.com/u/40724166?s=200&v=4" width="100px;" alt=""/><br /><sub><b>Responde Aí</b></sub></a><br />
+    <td align="center"><a href="https://github.com/responde-ai"><img style="border-radius: 50%;" src="https://avatars3.githubusercontent.com/u/40724166?s=200&v=4" width="100px;" alt=""/><br /><sub><b>Rafa Mendes</b></sub></a><br />
   </tr>
 </table>
 
@@ -140,6 +141,6 @@ The application layout is available on Vercel:
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzkxNTM3MDExLDg0NTIwNzM3OCwtMTkzOT
-k2ODE0Niw3Njc2MjAwMzMsNzY3NjIwMDMzXX0=
+eyJoaXN0b3J5IjpbMTEzOTMwMTc2NSw4NDUyMDczNzgsLTE5Mz
+k5NjgxNDYsNzY3NjIwMDMzLDc2NzYyMDAzM119
 -->
