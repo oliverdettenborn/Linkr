@@ -113,7 +113,7 @@ The application layout is available on Vercel:
 ### Contributors
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/responde-ai"><img style="border-radius: 50%;" src="https://avatars3.githubusercontent.com/u/40724166?s=200&v=4" width="100px;" alt=""/><br /><sub><b>Diego Fernandes</b></sub></a><br /><a href="https://rocketseat.com.br/" title="Rocketseat">👨‍🚀</a></td>
+    <td align="center"><a href="https://github.com/responde-ai"><img style="border-radius: 50%;" src="https://avatars3.githubusercontent.com/u/40724166?s=200&v=4" width="100px;" alt=""/><br /><sub><b>Responde Aí</b></sub></a><br /><a href="https://github.com/responde-ai>👨‍🚀</a></td>
   </tr>
 </table>
 
@@ -122,6 +122,6 @@ The application layout is available on Vercel:
 
 Made by Thalia Dettenborn and Thiago Ribeiro 👋🏽 Get in Touch!
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY1NjEzODQ4OSwtMTkzOTk2ODE0Niw3Nj
-c2MjAwMzMsNzY3NjIwMDMzXX0=
+eyJoaXN0b3J5IjpbODQ1MjA3Mzc4LC0xOTM5OTY4MTQ2LDc2Nz
+YyMDAzMyw3Njc2MjAwMzNdfQ==
 -->
