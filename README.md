@@ -4,6 +4,11 @@
 
 # Linkr
 
+
+![Badge](https://img.shields.io/github/forks/thaliadettenborn/Linkr?style=flat-square)
+
+
+
 ## About
 <p>
   Linkr is a social network for sharing useful links, developed for sharing knowledge in several areas.
@@ -145,5 +150,6 @@ The application layout is available on Vercel:
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NTk1MzE1NzIsNTg3MzE5MjA0XX0=
+eyJoaXN0b3J5IjpbLTM0OTU3OTU2MywtMTQ1OTUzMTU3Miw1OD
+czMTkyMDRdfQ==
 -->
