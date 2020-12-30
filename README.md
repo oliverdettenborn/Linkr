@@ -109,13 +109,22 @@ Version Control:<br>
 The application layout is available on Vercel:
 <a style='margin-left: 10px;' href='https://linkr-dun.vercel.app/'><img src='https://img.shields.io/badge/vercel%20-%23000000.svg?&style=for-the-badge&logo=vercel&logoColor=white'></a>
 
+
 ### Contributors
-<a href="https://www.respondeai.com.br/" style="display:flex; align-items: center; margin-top: 20px;">
-<img src="https://www.respondeai.com.br/assets/new_base/ra-logo-white-538f45e70bedc2b215f26b70a8230dd91fc3dbea33b8a872251d0602618554a6.png" width="150px"/>
-</a>
+<p align='center'>
+  <a href="https://www.respondeai.com.br/" style="display:flex; align-items: center; margin-top: 20px;">
+<img src="https://www.respondeai.com.br/assets/new_base/ra-logo-white-538f45e70bedc2b215f26b70a8230dd91fc3dbea33b8a872251d0602618554a6.png>
+  <img style="border-radius: 50%;" src="https://avatars3.githubusercontent.com/u/69740567?s=60&v=4" width="1500px;"/>
+</a  <br>
+  Responde Aí
+  </a>
+</p>
 
 
 ### Authors
 ---
 
 Made by Thalia Dettenborn and Thiago Ribeiro 👋🏽 Get in Touch!
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE3NzEyNTc0NTJdfQ==
+-->
