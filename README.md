@@ -112,17 +112,12 @@ The application layout is available on Vercel:
 
 ### Contributors
 
-<p align='center'>
-  <img style="border-radius: 50%;" src="https://avatars3.githubusercontent.com/u/69740567?s=60&v=4" width="100px;"/>
-  <br>
-  <sub><b>Responde Aí</b></sub>
-</p>
-
 
 ### Authors
 ---
 
 Made by Thalia Dettenborn and Thiago Ribeiro 👋🏽 Get in Touch!
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzY3NjIwMDMzLDc2NzYyMDAzM119
+eyJoaXN0b3J5IjpbLTE5Mzk5NjgxNDYsNzY3NjIwMDMzLDc2Nz
+YyMDAzM119
 -->
