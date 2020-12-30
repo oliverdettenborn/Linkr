@@ -141,6 +141,5 @@ The application layout is available on Vercel:
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTg3MzE5MjA0LDg0NTIwNzM3OCwtMTkzOT
-k2ODE0Niw3Njc2MjAwMzMsNzY3NjIwMDMzXX0=
+eyJoaXN0b3J5IjpbNTg3MzE5MjA0XX0=
 -->
