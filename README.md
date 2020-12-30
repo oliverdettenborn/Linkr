@@ -120,15 +120,16 @@ The application layout is available on Vercel:
 ### Authors
 ---
 <p align='center'>
-  <img src="https://avatars0.githubusercontent.com/u/70967247?s=460&u=0684339f0717ae41ce18689351f0215fdf270590&v=4" width="100px;" style="border-radius: 50%;"/>
-  <br><br>
-  Made by Thalia Dettenborn and Thiago Ribeiro 👋🏽 Get in Touch! <br>
+  Made by Thalia Dettenborn and Thiago Ribeiro 👋🏽 Get in Touch! <br><br>
+  <div>
+  <img src="https://avatars0.githubusercontent.com/u/70967247?s=460&u=0684339f0717ae41ce18689351f0215fdf270590&v=4" width="100px;"/> <br>
   <a href="https://www.linkedin.com/in/thaliarobertadettenborn/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a>
   <a href="mailto:thalia.born@gmail.com"><img src="https://img.shields.io/badge/gmail-D14836?&style=for-the-badge&logo=gmail&logoColor=white"/></a>
   <a href="https://github.com/thaliadettenborn"><img src="https://img.shields.io/badge/github-%23100000.svg?&style=for-the-badge&logo=github&logoColor=white" /></a>
+  <
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNTM2NzYzODgsODQ1MjA3Mzc4LC0xOT
+eyJoaXN0b3J5IjpbLTE1MTE0MDE2NzUsODQ1MjA3Mzc4LC0xOT
 M5OTY4MTQ2LDc2NzYyMDAzMyw3Njc2MjAwMzNdfQ==
 -->
