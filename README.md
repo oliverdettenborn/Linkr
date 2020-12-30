@@ -113,15 +113,16 @@ The application layout is available on Vercel:
 ### Contributors
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/responde-ai"><img style="border-radius: 50%;" src="https://avatars3.githubusercontent.com/u/40724166?s=200&v=4" width="100px;" alt=""/><br /><sub><b>Responde Aí</b></sub></a><br /><a href="https://github.com/responde-ai>👨‍🚀</a></td>
+    <td align="center"><a href="https://github.com/responde-ai"><img style="border-radius: 50%;" src="https://avatars3.githubusercontent.com/u/40724166?s=200&v=4" width="100px;" alt=""/><br /><sub><b>Responde Aí</b></sub></a><br />
   </tr>
 </table>
+
 
 ### Authors
 ---
 <p align='center'>
   Made by Thalia Dettenborn and Thiago Ribeiro 👋🏽 Get in Touch! <br><br>
-  <p align='center' width='250px' style='border: 1px s'>
+  <p align='center'>
 	  <img src="https://avatars0.githubusercontent.com/u/70967247?s=460&u=0684339f0717ae41ce18689351f0215fdf270590&v=4" width="100px;"/> <br />
  <sub><b>Thalia Dettenborn</b></sub></a> <br />
 	  <a href="https://www.linkedin.com/in/thaliarobertadettenborn/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a>
@@ -139,6 +140,6 @@ The application layout is available on Vercel:
 </p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk5MDkzMjkxLDg0NTIwNzM3OCwtMTkzOT
+eyJoaXN0b3J5IjpbNzkxNTM3MDExLDg0NTIwNzM3OCwtMTkzOT
 k2ODE0Niw3Njc2MjAwMzMsNzY3NjIwMDMzXX0=
 -->
