@@ -111,13 +111,11 @@ The application layout is available on Vercel:
 
 
 ### Contributors
+
 <p align='center'>
-  <a href="https://www.respondeai.com.br/" style="display:flex; align-items: center; margin-top: 20px;">
-<img src="https://www.respondeai.com.br/assets/new_base/ra-logo-white-538f45e70bedc2b215f26b70a8230dd91fc3dbea33b8a872251d0602618554a6.png>
-  <img style="border-radius: 50%;" src="https://avatars3.githubusercontent.com/u/69740567?s=60&v=4" width="1500px;"/>
-</a  <br>
-  Responde Aí
-  </a>
+  <img style="border-radius: 50%;" src="https://avatars3.githubusercontent.com/u/69740567?s=60&v=4" width="100px;"/>
+  <br>
+  <sub><b>Responde Aí</b></sub>
 </p>
 
 
@@ -126,5 +124,5 @@ The application layout is available on Vercel:
 
 Made by Thalia Dettenborn and Thiago Ribeiro 👋🏽 Get in Touch!
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NzEyNTc0NTJdfQ==
+eyJoaXN0b3J5IjpbNzY3NjIwMDMzXX0=
 -->
