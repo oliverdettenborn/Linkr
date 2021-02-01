@@ -137,7 +137,7 @@ The application layout is available on Vercel:
 	  <img src="https://avatars0.githubusercontent.com/u/70967247?s=460&u=0684339f0717ae41ce18689351f0215fdf270590&v=4" width="100px;"/> <br />
  <sub><b>Oliver Dettenborn</b></sub></a> <br />
 	  <a href="https://www.linkedin.com/in/oliverdettenborn/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a>
-	  <a href="mailto:oliver.dettenbornborn@gmail.com"><img src="https://img.shields.io/badge/gmail-D14836?&style=for-the-badge&logo=gmail&logoColor=white"/></a>
+	  <a href="mailto:oliver.dettenborn@gmail.com"><img src="https://img.shields.io/badge/gmail-D14836?&style=for-the-badge&logo=gmail&logoColor=white"/></a>
 	  <a href="https://github.com/oliverdettenborn"><img src="https://img.shields.io/badge/github-%23100000.svg?&style=for-the-badge&logo=github&logoColor=white" /></a>
   </p><br />
     <td align="center"><p align='center' width='250px'>
