@@ -4,7 +4,7 @@
 
 # Linkr
 
- ![license](https://img.shields.io/github/license/thaliadettenborn/Linkr?style=flat-square) ![total lines](https://img.shields.io/tokei/lines/github/thaliadettenborn/Linkr) ![last commit](https://img.shields.io/github/last-commit/thaliadettenborn/Linkr?style=flat-square) ![issues](https://img.shields.io/github/package-json/v/thaliadettenborn/Linkr?style=flat-square) ![forks](https://img.shields.io/github/forks/thaliadettenborn/Linkr?style=flat-square) 
+ ![license](https://img.shields.io/github/license/oliverdettenborn/Linkr?style=flat-square) ![total lines](https://img.shields.io/tokei/lines/github/oliverdettenborn/Linkr) ![last commit](https://img.shields.io/github/last-commit/oliverdettenborn/Linkr?style=flat-square) ![issues](https://img.shields.io/github/package-json/v/oliverdettenborn/Linkr?style=flat-square) ![forks](https://img.shields.io/github/forks/oliverdettenborn/Linkr?style=flat-square) 
 
 
 
@@ -130,15 +130,15 @@ The application layout is available on Vercel:
 ### Authors
 ---
 <p align='center'>
-  Made by Thalia Dettenborn and Thiago Ribeiro 👋🏽 Get in Touch! <br><br>
+  Made by Oliver Dettenborn and Thiago Ribeiro 👋🏽 Get in Touch! <br><br>
 <table>
   <tr>
     <td align="center"><p align='center'>
 	  <img src="https://avatars0.githubusercontent.com/u/70967247?s=460&u=0684339f0717ae41ce18689351f0215fdf270590&v=4" width="100px;"/> <br />
- <sub><b>Thalia Dettenborn</b></sub></a> <br />
-	  <a href="https://www.linkedin.com/in/thaliarobertadettenborn/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a>
-	  <a href="mailto:thalia.born@gmail.com"><img src="https://img.shields.io/badge/gmail-D14836?&style=for-the-badge&logo=gmail&logoColor=white"/></a>
-	  <a href="https://github.com/thaliadettenborn"><img src="https://img.shields.io/badge/github-%23100000.svg?&style=for-the-badge&logo=github&logoColor=white" /></a>
+ <sub><b>Oliver Dettenborn</b></sub></a> <br />
+	  <a href="https://www.linkedin.com/in/oliverdettenborn/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+	  <a href="mailto:oliver.dettenbornborn@gmail.com"><img src="https://img.shields.io/badge/gmail-D14836?&style=for-the-badge&logo=gmail&logoColor=white"/></a>
+	  <a href="https://github.com/oliverdettenborn"><img src="https://img.shields.io/badge/github-%23100000.svg?&style=for-the-badge&logo=github&logoColor=white" /></a>
   </p><br />
     <td align="center"><p align='center' width='250px'>
 	  <img src="https://media-exp1.licdn.com/dms/image/C4D03AQHHonLndu4rWQ/profile-displayphoto-shrink_200_200/0/1558406909827?e=1614816000&v=beta&t=OHmyUt5ztReb5aioZAhIzV1qdg8kZkpK60PcbepjhCo" width="100px;"/> <br />
